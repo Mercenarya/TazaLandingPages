@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>H.DERMA | 프로페셔널 가이드</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "secondary-container": "#ffd088",
+                        "surface-container-high": "#e9e7ea",
+                        "background": "#fbf9fb",
+                        "outline": "#75777e",
+                        "outline-variant": "#c5c6ce",
+                        "primary-container": "#0a1d37",
+                        "primary": "#00030a",
+                        "on-secondary-container": "#79571b",
+                        "on-surface-variant": "#44474d",
+                        "secondary": "#7b581c",
+                        "on-surface": "#1b1b1e",
+                        "surface-container-lowest": "#ffffff"
+                },
+                "fontFamily": {
+                        "h1": ["Manrope", "Noto Sans KR"],
+                        "h2": ["Manrope", "Noto Sans KR"],
+                        "h3": ["Manrope", "Noto Sans KR"],
+                        "body-md": ["Noto Sans KR"]
+                }
+              },
+            },
+          }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        body { min-height: 100dvh; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+
+<nav class="fixed top-0 w-full z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md flex justify-between items-center px-6 h-16">
+    <span class="material-symbols-outlined text-slate-900 cursor-pointer">menu</span>
+    <h1 class="font-manrope tracking-[0.2em] uppercase text-sm font-bold text-slate-900">H.DERMA</h1>
+    <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+        <img alt="User" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDft1ZohMtRghNOFPjdPqzXi_l6A0iAp-S_HPE5LHe8mUBvFjGIq66cKz_suSKfSu-_n7tnpwSgLDn4qCLK0bWcmkfxYhneELlnTn1czq_VrVx386ySwNZG_Q4Q8n2T5wPt55mh9C56vfGvPiKjkdA-g58-b-vVjUh_1qiWNBibaR1iNC171RDFrPAQuZyegwEZ2Y8B_L2kS7oglM2NrcRrP3rNtFMqxNAtkoZa3z2FMnS5T6Z0-kKXFB9c1jT_-iBmFeFyS9w6Gxw-"/>
+    </div>
+</nav>
+
+<main class="pt-24 pb-32 px-6 max-w-screen-xl mx-auto">
+    <header class="mb-12">
+        <span class="text-[12px] font-bold text-secondary uppercase tracking-[0.2em] block mb-2">프로페셔널 가이드</span>
+        <h2 class="text-3xl md:text-4xl font-bold text-primary leading-tight font-h2">당신을 위한 맞춤 처방 루틴</h2>
+        <p class="text-on-surface-variant mt-4 max-w-lg text-sm md:text-base leading-relaxed">
+            피부의 회복, 케어 그리고 장기적인 건강을 유지하기 위한 임상 기반의 프로토콜을 소개합니다.
+        </p>
+    </header>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <section class="group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:border-secondary shadow-sm">
+            <div class="aspect-[16/9] w-full overflow-hidden">
+                <img alt="임상적 회복" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="/storages/contents_hherma/skin1.jpg"/>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="bg-primary-container text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase">리커버리</span>
+                    <span class="text-[11px] text-on-surface-variant font-bold uppercase tracking-wider">소요시간 12분</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3 font-h3">필링 후 스킨케어 가이드</h3>
+                <p class="text-sm text-on-surface-variant mb-6 leading-relaxed italic">
+                    케미컬 필링 후 피부 재생에 필수적인 프로토콜입니다. 장벽 기능 회복과 집중 하이드레이션에 초점을 맞추고 있습니다.
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary text-lg">verified_user</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">임상 프로토콜</span>
+                    </div>
+                    <button onclick="redirecting_pages('/templates/forums/korean/forum_blog_1.html')" class="text-xs font-black text-primary flex items-center gap-2 group-hover:text-secondary transition-colors">
+                        가이드 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section class="group overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl transition-all hover:border-secondary shadow-sm">
+            <div class="aspect-[16/9] w-full overflow-hidden">
+                <img alt="항산화 효과" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" src="/storages/contents_hherma/skin2.jpg"/>
+            </div>
+            <div class="p-6">
+                <div class="flex items-center gap-3 mb-3">
+                    <span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded uppercase">영양 성분</span>
+                    <span class="text-[11px] text-on-surface-variant font-bold uppercase tracking-wider">소요시간 8분</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3 font-h3">비타민 E로 깨우는 아름다움의 잠재력</h3>
+                <p class="text-sm text-on-surface-variant mb-6 leading-relaxed italic">
+                    비타민 E의 강력한 항산화력. 산화 손상 복구와 지질 장벽을 강화하는 방법에 대해 자세히 알아보세요.
+                </p>
+                <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-outlined text-secondary text-lg">science</span>
+                        <span class="text-[10px] font-bold uppercase tracking-widest text-primary">포뮬러의 과학</span>
+                    </div>
+                    <button onclick="redirecting_pages('/templates/forums/korean/forum_blog_2.html')" class="text-xs font-black text-primary flex items-center gap-2 group-hover:text-secondary transition-colors">
+                        자세히 보기 <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</main>
+
+<nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md border-t border-[#e5e2e1] h-20 pb-safe flex justify-around items-center">
+    <a class="flex flex-col items-center justify-center text-slate-400 hover:text-secondary transition-transform" href="#">
+        <span class="material-symbols-outlined mb-1">home</span>
+        <span class="text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_4.html')">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+        <span class="material-symbols-outlined">forum</span>
+        <span class="text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/korean/forum_obj.html')">커뮤니티</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">science</span>
+        <span class="text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/korean/forum_obj_link.html')">루틴</span>
+    </a>
+</nav>
+
+<script>
+    function redirecting_pages(path){
+        try{
+            window.location.href = `${path}`;
+        }
+        catch(error){
+            alert(`오류가 발생했습니다:\n ${error}`);
+            console.error(error)
+        }
+    }
+</script>
+
+</body>
+</html>

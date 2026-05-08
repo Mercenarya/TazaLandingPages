@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ko"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif:wght@400;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#604104",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#b6c7e9",
+                    "primary": "#00030a",
+                    "outline-variant": "#c5c6ce",
+                    "on-primary-fixed-variant": "#364763",
+                    "inverse-primary": "#b6c7e9",
+                    "inverse-surface": "#303032",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-container-highest": "#e4e2e4",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffddae",
+                    "tertiary-fixed": "#d5e3fc",
+                    "primary-container": "#0a1d37",
+                    "on-background": "#1b1b1e",
+                    "tertiary-container": "#101e30",
+                    "surface-dim": "#dbd9dc",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "surface-container-low": "#f5f3f5",
+                    "surface-variant": "#e4e2e4",
+                    "secondary": "#7b581c",
+                    "background": "#fbf9fb",
+                    "outline": "#75777e",
+                    "surface-container": "#efedf0",
+                    "on-secondary-fixed": "#281800",
+                    "surface-tint": "#4e5f7c",
+                    "inverse-on-surface": "#f2f0f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#7586a5",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#78869c",
+                    "surface-container-high": "#e9e7ea",
+                    "on-surface-variant": "#44474d",
+                    "tertiary": "#00030b",
+                    "secondary-fixed-dim": "#edbf79",
+                    "on-tertiary-fixed": "#0e1c2e",
+                    "on-secondary-container": "#79571b",
+                    "on-surface": "#1b1b1e",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#ffd088",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#081c36",
+                    "surface": "#fbf9fb",
+                    "surface-bright": "#fbf9fb",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "margin": "24px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "body-lg": ["Noto Serif"],
+                    "h1": ["Manrope"],
+                    "caption": ["Noto Serif"],
+                    "body-md": ["Noto Serif"],
+                    "label-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body-md text-on-surface">
+<!-- Top Navigation Shell -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 flex justify-between items-center px-6 h-16 w-full">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-900 cursor-pointer hover:opacity-70 transition-opacity">menu</span>
+<div class="text-xl font-bold tracking-[0.2em] text-slate-900 font-manrope uppercase">H.DERMA</div>
+</div>
+<div class="flex items-center gap-6">
+<nav class="hidden md:flex gap-8">
+<span class="font-manrope uppercase tracking-widest text-sm text-slate-900 font-bold hover:opacity-70 transition-opacity cursor-pointer">Home</span>
+<span class="font-manrope uppercase tracking-widest text-sm text-slate-500 hover:opacity-70 transition-opacity cursor-pointer">Forum</span>
+<span class="font-manrope uppercase tracking-widest text-sm text-slate-500 hover:opacity-70 transition-opacity cursor-pointer">Routine</span>
+</nav>
+<span class="material-symbols-outlined text-slate-900 cursor-pointer hover:opacity-70 transition-opacity">search</span>
+</div>
+</header>
+<main class="pt-16 pb-32">
+<!-- Hero Section -->
+<section class="relative w-full h-[530px] flex items-end overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" data-alt="Modern medical laboratory with sophisticated scientific equipment, soft blue lighting, and high-end clinical aesthetic style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAauDuWz-LMPD2FZApDcVHdiZ6VXdRVQ2zf6WAyibJnl_xdwpLgu5vCgYn5ri2eeiIFMZWq5Gedne4n50e8BvHsvfVDu8oJ6zou7_wVvGBGiO3XcPW2YMZoYG1eDx1enc96AaBQ0_Y17v-e5diJzXg5QVJjwm2kTrl6TsC27QDtuSqdcdo3-6ayHkGyIDLK2CzS8zWcZMY6K_t1yE4dFNwWphkCK4E_YfrpDFBUFyts9GgfIBOzKaqornIq-4_-ej82r8GMRvRBqY7p"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+</div>
+<div class="relative z-10 px-margin pb-lg max-w-4xl">
+<div class="inline-flex items-center gap-2 mb-sm bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full">
+<span class="font-label-md text-caption uppercase">PROMISE VERIFIED</span>
+</div>
+<h1 class="font-h1 text-h1 text-white mb-md leading-tight">고농축 순수 엑소좀 기술을 통한 엘라좀의 성공 비결 해독</h1>
+<div class="flex items-center gap-4 text-white/80 font-label-md">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">calendar_today</span> 2025년 4월 26일</span>
+<span class="w-1 h-1 bg-white/40 rounded-full"></span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-sm">person</span> linh.seo</span>
+</div>
+</div>
+</section>
+<!-- Intro Section -->
+<article class="px-margin py-xl max-w-4xl mx-auto">
+<div class="flex flex-col gap-md">
+<p class="font-body-lg text-body-lg text-on-surface/90 leading-relaxed italic border-l-4 border-secondary pl-md">
+                    최근 개최된 메디컬 에스테틱 세미나에서 '엑소좀(Exosome)'은 피부 재생과 항노화의 새로운 지평을 여는 혁신적인 성분으로 주목받았습니다. 그 중에서도 특히 독보적인 기술력을 자랑하는 '엘라좀(Elasome)'의 성공 사례는 과학적 정밀함과 임상적 효과의 완벽한 조화를 보여줍니다.
+                </p>
+<p class="font-body-md text-on-surface-variant">
+                    엘라좀은 단순한 스킨부스터를 넘어, 피부 세포 간의 소통을 원활하게 하고 근본적인 자생력을 높이는 데 집중합니다. 이번 호에서는 엘라좀이 어떻게 고농축 순수 엑소좀 기술을 통해 글로벌 에스테틱 시장을 선도하고 있는지 그 핵심 기술력을 심층 분석합니다.
+                </p>
+</div>
+<!-- Bento Grid Features -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-gutter mt-xl">
+<div class="bg-surface-container-lowest border border-outline-variant p-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-secondary/10 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">magnification_small</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm">고농축 순수 엑소좀</h3>
+<p class="font-body-md text-on-surface-variant">
+                            제품당 200억 개의 고순도 엑소좀 입자를 함유하여 타사 대비 압도적인 활성 성분 전달력을 자랑합니다. 불순물을 최소화하고 순수한 효능만을 담았습니다.
+                        </p>
+</div>
+<div class="mt-md text-secondary font-label-md flex items-center gap-2">
+                        20,000,000,000 PARTICLES <span class="material-symbols-outlined">verified</span>
+</div>
+</div>
+<div class="bg-primary text-white p-lg flex flex-col justify-between">
+<div>
+<div class="w-12 h-12 bg-white/10 flex items-center justify-center mb-md">
+<span class="material-symbols-outlined text-white" style="font-variation-settings: 'FILL' 1;">science</span>
+</div>
+<h3 class="font-h3 text-h3 mb-sm">세 가지 혁신 기술</h3>
+<ul class="space-y-sm font-body-md text-white/80">
+<li class="flex items-start gap-2"><span class="text-secondary font-bold">01</span> Nano Vesicle Delivery</li>
+<li class="flex items-start gap-2"><span class="text-secondary font-bold">02</span> DNA Repair Complex</li>
+<li class="flex items-start gap-2"><span class="text-secondary font-bold">03</span> Multi-molecular HA</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Detailed Section -->
+<section class="mt-xl">
+<h2 class="font-h2 text-h2 mb-lg border-b border-outline-variant pb-base">Clinical Laboratory Standards</h2>
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-md items-start">
+<div class="lg:col-span-3 space-y-md">
+<p class="font-body-md text-on-surface-variant">
+                            엘라좀의 순수 엑소좀은 줄기세포 유래 물질을 미세 필터링 및 고농축 공정을 거쳐 추출됩니다. 이 과정에서 엑소좀의 안정성을 극대화하는 'Nano Vesicle Delivery' 기술은 유효 성분이 피부 깊숙이 안정적으로 침투할 수 있도록 돕습니다.
+                        </p>
+<p class="font-body-md text-on-surface-variant">
+                            또한 'DNA Repair Complex'는 손상된 피부 세포의 회복을 촉진하며, 'Multi-molecular HA(다중 분자 히알루론산)'는 피부 표면부터 기저층까지 촘촘하게 수분을 공급하여 즉각적인 광채와 탄력을 부여합니다.
+                        </p>
+</div>
+<div class="lg:col-span-2">
+<img class="w-full aspect-square object-cover border border-outline-variant" data-alt="Scientific macro shot of laboratory research, white and clinical blue tones, minimalist professional dermatology setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBKRI-N8OQ-YadfynLWTjbRV3y9afFz672PT_lHCTMewHIISVM9Y6AynXt271L2fwvnb3AM4d6NDEv_DrHobUXW6kVIlrkCCfQJ6TVSM-FlHE8ZPRDP6zvF3ArxDfDs3f5_zvngMYa12LeWd4rNh1eBCreLkiCfczxCMCVajHuvxWhm-8XampR9pvNuv63_yseZBNZnaLzPz1WDv6WcdYsXt5I63_sL9W194nf5G5c_MnnnghCA-3gk2hlKhBapwrBCliQIXW7j3djD"/>
+</div>
+</div>
+</section>
+<!-- Product Highlights List -->
+<section class="mt-xl bg-surface-container-low p-lg">
+<h2 class="font-h2 text-h2 mb-lg text-center uppercase tracking-tight">Elasome Series: M1 to M5</h2>
+<div class="space-y-sm">
+<div class="flex items-center gap-md p-md bg-white border border-outline-variant hover:border-secondary transition-colors group cursor-default">
+<span class="font-h2 text-secondary/30 group-hover:text-secondary transition-colors">M1</span>
+<div>
+<h4 class="font-label-md font-bold text-on-surface">REJUVENATING CORE</h4>
+<p class="text-caption text-on-surface-variant">가장 순수한 형태의 엑소좀으로 피부 자생력의 기초를 다집니다.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-white border border-outline-variant hover:border-secondary transition-colors group cursor-default">
+<span class="font-h2 text-secondary/30 group-hover:text-secondary transition-colors">M2</span>
+<div>
+<h4 class="font-label-md font-bold text-on-surface">VITALITY BOOST</h4>
+<p class="text-caption text-on-surface-variant">지친 피부에 즉각적인 에너지를 부여하고 톤을 개선합니다.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-white border border-outline-variant hover:border-secondary transition-colors group cursor-default">
+<span class="font-h2 text-secondary/30 group-hover:text-secondary transition-colors">M3</span>
+<div>
+<h4 class="font-label-md font-bold text-on-surface">ELASTICITY LIFT</h4>
+<p class="text-caption text-on-surface-variant">고분자 HA와 결합하여 무너진 얼굴 라인을 탄탄하게 잡아줍니다.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-white border border-outline-variant hover:border-secondary transition-colors group cursor-default">
+<span class="font-h2 text-secondary/30 group-hover:text-secondary transition-colors">M4</span>
+<div>
+<h4 class="font-label-md font-bold text-on-surface">HYDRATION LOCK</h4>
+<p class="text-caption text-on-surface-variant">피부 장벽을 강화하여 오랜 시간 촉촉함을 유지합니다.</p>
+</div>
+</div>
+<div class="flex items-center gap-md p-md bg-white border border-outline-variant hover:border-secondary transition-colors group cursor-default">
+<span class="font-h2 text-secondary/30 group-hover:text-secondary transition-colors">M5</span>
+<div>
+<h4 class="font-label-md font-bold text-on-surface">ULTIMATE SHINE</h4>
+<p class="text-caption text-on-surface-variant">피부 본연의 광채를 끌어올려 유리알 같은 피부결을 완성합니다.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Conclusion -->
+<section class="mt-xl py-lg text-center border-t border-outline-variant">
+<img alt="H.Derma Logo" class="h-12 mx-auto mb-md" data-alt="H.Derma brand logo minimalist professional luxury clinical design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPxftnph-lUZGTAhEnolBPZWyk_gdZ0t5f_xxkNSimvM1KDfVTGoB4SCU8PV4188iujLZFPgVZTHNzvqyuBukhEi9k2H1_bhJkCMcIx8-68pOC-bPpMOe1Z8Rl6JQ7o5C2MxDkw-pkRX3WeqQKmJNvMBRIUfuW1UJ7H929Wwd7a5TD4h3X5Al90mnnV1XgzPClcTWBwpPwz6tLaJvC_Uf9TBmH6GkuSjovoWofENbow3TP07YnLEpnkEjKTz3k7c-A3dM0V3jFcFNx"/>
+<p class="font-body-lg text-on-surface mb-md max-w-2xl mx-auto">
+                    H.DERMA은 대한민국 에스테틱의 표준을 제시하며, 끊임없는 연구와 최고의 기술력을 통해 고객에게 진정한 가치를 전달할 것을 약속드립니다. 엘라좀은 그 약속의 결정체입니다.
+                </p>
+<button class="bg-primary text-white font-label-md px-lg py-md tracking-widest hover:bg-primary/90 transition-all active:scale-95 duration-200 uppercase">
+                    상담 예약하기
+                </button>
+</section>
+</article>
+</main>
+<!-- Bottom Navigation Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200 flex justify-around items-center px-4 py-3 pb-safe shadow-[0_-4px_12px_rgba(0,0,0,0.05)] md:hidden">
+<div class="flex flex-col items-center justify-center text-slate-400 px-4 py-1">
+<span class="material-symbols-outlined">home</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider uppercase">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-900 bg-slate-100 rounded-xl px-4 py-1">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider uppercase">Forum</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 px-4 py-1">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider uppercase">Routine</span>
+</div>
+</nav>
+</body></html>

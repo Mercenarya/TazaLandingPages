@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+
+<html class="light" lang="ja"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "on-secondary-fixed-variant": "#604104",
+                    "on-error": "#ffffff",
+                    "primary-fixed-dim": "#b6c7e9",
+                    "primary": "#00030a",
+                    "outline-variant": "#c5c6ce",
+                    "on-primary-fixed-variant": "#364763",
+                    "inverse-primary": "#b6c7e9",
+                    "inverse-surface": "#303032",
+                    "primary-fixed": "#d6e3ff",
+                    "surface-container-highest": "#e4e2e4",
+                    "error": "#ba1a1a",
+                    "secondary-fixed": "#ffddae",
+                    "tertiary-fixed": "#d5e3fc",
+                    "primary-container": "#0a1d37",
+                    "on-background": "#1b1b1e",
+                    "tertiary-container": "#101e30",
+                    "surface-dim": "#dbd9dc",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "surface-container-low": "#f5f3f5",
+                    "surface-variant": "#e4e2e4",
+                    "secondary": "#7b581c",
+                    "background": "#fbf9fb",
+                    "outline": "#75777e",
+                    "surface-container": "#efedf0",
+                    "on-secondary-fixed": "#281800",
+                    "surface-tint": "#4e5f7c",
+                    "inverse-on-surface": "#f2f0f3",
+                    "surface-container-lowest": "#ffffff",
+                    "on-primary-container": "#7586a5",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-container": "#78869c",
+                    "surface-container-high": "#e9e7ea",
+                    "on-surface-variant": "#44474d",
+                    "tertiary": "#00030b",
+                    "secondary-fixed-dim": "#edbf79",
+                    "on-tertiary-fixed": "#0e1c2e",
+                    "on-secondary-container": "#79571b",
+                    "on-surface": "#1b1b1e",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "on-tertiary": "#ffffff",
+                    "secondary-container": "#ffd088",
+                    "on-error-container": "#93000a",
+                    "on-primary-fixed": "#081c36",
+                    "surface": "#fbf9fb",
+                    "surface-bright": "#fbf9fb",
+                    "on-primary": "#ffffff",
+                    "error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "md": "24px",
+                    "xs": "4px",
+                    "gutter": "24px",
+                    "xl": "80px",
+                    "base": "8px",
+                    "sm": "12px",
+                    "margin": "24px",
+                    "lg": "48px"
+            },
+            "fontFamily": {
+                    "h2": ["Manrope"],
+                    "h3": ["Manrope"],
+                    "body-lg": ["Noto Serif"],
+                    "h1": ["Manrope"],
+                    "caption": ["Noto Serif"],
+                    "body-md": ["Noto Serif"],
+                    "label-md": ["Manrope"]
+            },
+            "fontSize": {
+                    "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .pb-safe { padding-bottom: env(safe-area-inset-bottom); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-md overflow-x-hidden">
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800 h-16 flex justify-between items-center px-6">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer hover:opacity-70 transition-opacity active:scale-95 duration-200" data-icon="menu">menu</span>
+<span class="text-xl font-bold tracking-[0.2em] text-slate-900 dark:text-slate-50 font-manrope uppercase">H.DERMA</span>
+</div>
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-slate-900 dark:text-slate-50 cursor-pointer hover:opacity-70 transition-opacity active:scale-95 duration-200" data-icon="search">search</span>
+</div>
+</header>
+<main class="pt-16 pb-32 max-w-screen-md mx-auto px-md">
+<nav class="flex items-center gap-2 py-8 font-label-md text-caption uppercase tracking-wider text-on-surface-variant">
+<span>News</span>
+<span class="material-symbols-outlined text-xs" data-icon="chevron_right">chevron_right</span>
+<span>Insights</span>
+</nav>
+<article>
+<header class="mb-lg">
+<div class="mb-sm">
+<span class="inline-block bg-secondary-container text-on-secondary-container font-label-md text-[10px] px-3 py-1 rounded-full tracking-widest uppercase">Clinical Insight</span>
+</div>
+<h1 class="font-h1 text-h2 md:text-h1 mb-md text-primary leading-tight">
+                    Elasomeの成功を解明：<br/>高濃度純粋エクソソーム技術
+                </h1>
+<div class="flex items-center gap-4 text-on-surface-variant font-label-md text-sm border-t border-b border-outline-variant/30 py-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="calendar_today">calendar_today</span>
+<span>2025年4月26日</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]" data-icon="person">person</span>
+<span>linh.seo</span>
+</div>
+</div>
+</header>
+<section class="mb-xl relative overflow-hidden rounded-xl">
+<img alt="Elasome breakthrough" class="w-full aspect-[16/9] object-cover" data-alt="Microscopic view of shimmering cellular vesicles in a clinical deep navy blue and sterile white liquid environment with bokeh light effects" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCSlkF-QoAZPDZskuUHXQHMAyXW2yo2M74r9Tvg6fh0PB3vO2LCzgPIhIi8D_w5pbVEq1fpP7CyIWw6a5NIua7PoUARk1LKOTPzYNSdMSJ4JxjqbU420k5mTJx2Xaw4pahEmdQ2KcbBzLYh1FeSKbVeGilL2HoRww2Q3sgifjoUHu54ht6nE3stJ49l28Dg5cP9pqxNxnL547G1FvPsZy7MJyjdvvEwAEPeoL127ghR7RFQZhuJnjR-I8UeaaThUyqK6DlLZuXxXLgc"/>
+<div class="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent"></div>
+</section>
+<div class="space-y-lg">
+<section class="font-body-lg text-body-lg text-on-surface leading-relaxed">
+<p class="mb-md">
+                        美容皮膚科学の最前線において、エクソソームは単なるトレンドを超え、再生医療の核となる存在へと進化を遂げました。H.Dermaが開催した最新の学術セミナーでは、次世代のスキンブースター「Elasome（エラソーム）」がもたらす画期的な技術革新に焦点が当てられました。
+                    </p>
+</section>
+<section class="bg-surface-container-low p-lg border border-outline-variant/50 rounded-xl">
+<h2 class="font-h2 text-h3 mb-md text-primary flex items-center gap-3">
+<span class="w-1 h-8 bg-secondary"></span>
+                        高濃度純粋エクソソーム技術
+                    </h2>
+<p class="font-body-md text-body-md mb-md">
+                        Elasomeの最大の特徴は、その圧倒的な含有量にあります。1製品あたり**200億個**もの高濃度純粋エクソソームを配合。これは従来の製品を遥かに凌駕する数値であり、細胞レベルでの修復と再生を劇的に加速させます。
+                    </p>
+<div class="grid grid-cols-2 gap-sm mt-md">
+<div class="bg-white p-md border border-outline-variant/30 rounded-lg text-center">
+<span class="block text-h2 font-bold text-secondary">20B</span>
+<span class="font-label-md text-[10px] uppercase">Particles</span>
+</div>
+<div class="bg-white p-md border border-outline-variant/30 rounded-lg text-center">
+<span class="block text-h2 font-bold text-secondary">99%</span>
+<span class="font-label-md text-[10px] uppercase">Purity</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="font-h2 text-h3 mb-lg text-primary text-center">3つの画期的技術</h2>
+<div class="grid gap-md">
+<div class="flex gap-md p-md bg-white border border-outline-variant/20 rounded-xl items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="biotech">biotech</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-lg font-bold mb-xs">Nano Vesicle Delivery</h3>
+<p class="text-on-surface-variant text-sm">有効成分を細胞の深部まで正確に届ける高度なデリバリーシステム。</p>
+</div>
+</div>
+<div class="flex gap-md p-md bg-white border border-outline-variant/20 rounded-xl items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="dna">genetics</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-lg font-bold mb-xs">DNA Repair Complex</h3>
+<p class="text-on-surface-variant text-sm">損傷した細胞のDNAを修復し、肌本来の生命力を呼び覚まします。</p>
+</div>
+</div>
+<div class="flex gap-md p-md bg-white border border-outline-variant/20 rounded-xl items-start">
+<div class="flex-shrink-0 w-12 h-12 bg-secondary/10 flex items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-secondary" data-icon="water_drop">water_drop</span>
+</div>
+<div>
+<h3 class="font-h3 text-body-lg font-bold mb-xs">Multi-molecular HA</h3>
+<p class="text-on-surface-variant text-sm">異なる分子量のヒアルロン酸が、表面から深部まで多層的に保水。</p>
+</div>
+</div>
+</div>
+</section>
+<section class="py-lg">
+<h2 class="font-h2 text-h3 mb-lg text-primary">Product Lineup</h2>
+<div class="flex flex-col gap-sm">
+<div class="flex items-center justify-between p-4 border-b border-outline-variant/20 group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-h2 text-h3 text-outline-variant group-hover:text-secondary transition-colors">M1</span>
+<span class="font-body-md font-bold">Intensive Repair</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-outline-variant/20 group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-h2 text-h3 text-outline-variant group-hover:text-secondary transition-colors">M2</span>
+<span class="font-body-md font-bold">Deep Hydration</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-outline-variant/20 group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-h2 text-h3 text-outline-variant group-hover:text-secondary transition-colors">M3</span>
+<span class="font-body-md font-bold">Brightening Core</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-outline-variant/20 group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-h2 text-h3 text-outline-variant group-hover:text-secondary transition-colors">M4</span>
+<span class="font-body-md font-bold">Elasticity Lift</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="arrow_forward">arrow_forward</span>
+</div>
+<div class="flex items-center justify-between p-4 border-b border-outline-variant/20 group hover:bg-surface-container-low transition-colors">
+<div class="flex items-center gap-4">
+<span class="font-h2 text-h3 text-outline-variant group-hover:text-secondary transition-colors">M5</span>
+<span class="font-body-md font-bold">Barrier Protect</span>
+</div>
+<span class="material-symbols-outlined text-outline-variant" data-icon="arrow_forward">arrow_forward</span>
+</div>
+</div>
+</section>
+<section class="border-t-2 border-primary pt-lg">
+<h2 class="font-h2 text-h3 mb-md">K-Standard: Commitment to Medical Aesthetics</h2>
+<p class="font-body-md text-on-surface leading-relaxed italic">
+                        韓国の厳しい医療基準をクリアし、科学的根拠に基づいたアプローチを徹底するElasome。H.Dermaは、この最先端技術を通じて、患者様一人ひとりに「確かな変化」を提供することを約束します。美しさは、緻密な計算と純粋な科学から生まれるのです。
+                    </p>
+</section>
+</div>
+</article>
+<section class="mt-xl">
+<div class="bg-primary p-lg text-on-primary rounded-xl overflow-hidden relative">
+<div class="relative z-10">
+<h3 class="font-h3 text-h3 mb-md">カウンセリング予約</h3>
+<p class="font-body-md mb-lg opacity-80">Elasomeによる最新のスキンブースター治療の詳細については、専門のカウンセラーまでお問い合わせください。</p>
+</div>
+<div class="absolute right-0 top-0 w-1/3 h-full opacity-20 pointer-events-none">
+<img alt="Clinic setting" class="w-full h-full object-cover" data-alt="Blurred professional laboratory or medical clinic background with soft blue lighting and clean minimalist architecture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHkJlRZcdDNcxQzHiBYHqZo2tB2f_rBl6UDvvanlsL1RgM3sIVQHhrHy8DKI7KJYFpjUJOrNzutTUP8Nf82yGdzegyRjkqSFyDRrq8noULqq_ivJWnnofPxaupxwUQD7XCOvFrDhb7CrNYZvdThU_jobZituo1s8x8owlC7vkNx2HpkfLWxDJDJXBGALAYexw42jaGQDOQsPCcy70jotSXiVL2ZTIakaq1_ub_b7DPuKRRzwu9fq3GMioiugOl_E_YcNiv8ltZfrbI"/>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-surface-container-highest py-xl px-md mb-20">
+<div class="max-w-screen-md mx-auto text-center">
+<span class="text-xl font-bold tracking-[0.2em] text-slate-900 dark:text-slate-50 font-manrope uppercase block mb-md">H.DERMA</span>
+<p class="text-caption text-on-surface-variant">© 2025 H.DERMA Aesthetic &amp; Science. All Rights Reserved.</p>
+</div>
+</footer>
+<nav class="fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe bg-white/80 dark:bg-slate-950/80 backdrop-blur-md border-t border-slate-200 dark:border-slate-800 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] z-50 rounded-t-xl">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-slate-600 dark:hover:text-slate-300 transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider uppercase mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-900 dark:text-slate-50 bg-slate-100 dark:bg-slate-800 rounded-xl px-4 py-1 transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider uppercase mt-1">Forum</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-slate-600 dark:hover:text-slate-300 transition-transform active:translate-y-[-2px]" href="#">
+<span class="material-symbols-outlined" data-icon="auto_awesome">auto_awesome</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider uppercase mt-1">Routine</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>DERMA CLINIC - News Feed</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif+JP:wght@400;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+              darkMode: "class",
+              theme: {
+                  extend: {
+                      "colors": {
+                          "error-container": "#ffdad6",
+                          "on-secondary": "#ffffff",
+                          "outline-variant": "#c5c6ce",
+                          "on-tertiary-container": "#78869c",
+                          "surface-dim": "#dbd9dc",
+                          "secondary": "#7b581c",
+                          "on-tertiary-fixed": "#0e1c2e",
+                          "primary-fixed": "#d6e3ff",
+                          "on-secondary-container": "#79571b",
+                          "background": "#fbf9fb",
+                          "tertiary": "#00030b",
+                          "primary-fixed-dim": "#b6c7e9",
+                          "surface-container": "#efedf0",
+                          "on-secondary-fixed": "#281800",
+                          "on-background": "#1b1b1e",
+                          "tertiary-fixed": "#d5e3fc",
+                          "outline": "#75777e",
+                          "inverse-surface": "#303032",
+                          "tertiary-container": "#101e30",
+                          "secondary-fixed-dim": "#edbf79",
+                          "error": "#ba1a1a",
+                          "surface": "#fbf9fb",
+                          "on-primary-fixed": "#081c36",
+                          "tertiary-fixed-dim": "#b9c7df",
+                          "on-error": "#ffffff",
+                          "inverse-on-surface": "#f2f0f3",
+                          "on-error-container": "#93000a",
+                          "on-primary-container": "#7586a5",
+                          "on-surface": "#1b1b1e",
+                          "on-tertiary-fixed-variant": "#3a485b",
+                          "secondary-fixed": "#ffddae",
+                          "surface-bright": "#fbf9fb",
+                          "inverse-primary": "#b6c7e9",
+                          "primary": "#00030a",
+                          "surface-tint": "#4e5f7c",
+                          "on-primary": "#ffffff",
+                          "surface-variant": "#e4e2e4",
+                          "surface-container-highest": "#e4e2e4",
+                          "surface-container-high": "#e9e7ea",
+                          "primary-container": "#0a1d37",
+                          "on-primary-fixed-variant": "#364763",
+                          "secondary-container": "#ffd088",
+                          "surface-container-low": "#f5f3f5",
+                          "on-surface-variant": "#44474d",
+                          "surface-container-lowest": "#ffffff",
+                          "on-tertiary": "#ffffff",
+                          "on-secondary-fixed-variant": "#604104"
+                      },
+                      "borderRadius": {
+                          "DEFAULT": "0.125rem",
+                          "lg": "0.25rem",
+                          "xl": "0.5rem",
+                          "full": "0.75rem"
+                      },
+                      "spacing": {
+                          "sm": "12px",
+                          "xl": "80px",
+                          "md": "24px",
+                          "margin": "24px",
+                          "base": "8px",
+                          "xs": "4px",
+                          "gutter": "24px",
+                          "lg": "48px"
+                      },
+                      "fontFamily": {
+                          "h3": ["Manrope", "Noto Serif JP"],
+                          "h2": ["Manrope", "Noto Serif JP"],
+                          "h1": ["Manrope", "Noto Serif JP"],
+                          "label-md": ["Manrope", "Noto Serif JP"],
+                          "caption": ["Noto Serif JP"],
+                          "body-lg": ["Noto Serif JP"],
+                          "body-md": ["Noto Serif JP"]
+                      },
+                      "fontSize": {
+                          "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                          "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                          "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                          "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                          "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                          "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                          "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                      }
+                  },
+              },
+          }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        /* 標準の line-clamp を追加して修正 */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        body {
+            background-color: #fbf9fb;
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="font-body-md text-on-surface">
+    <header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-slate-900 cursor-pointer hover:opacity-70 transition-opacity">menu</span>
+        </div>
+        <h1 class="text-lg font-black tracking-widest text-slate-900 font-manrope uppercase">DERMA CLINIC</h1>
+        <div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+            <img alt="User Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBruciRKWhMQgyqHpGzlssIF8V_N1YvZZDL3IiBt1sACYV6o4mPEd62BZhlJGrCwwbQtltQkLVP6LGjZnyEY7RF4_JewNN_mK40xnWQW7Z55adN8hYo1Il6CSiy-jb16_uNNACFwVmY0L-CN5YwBDrn6G6-Bzm-8P_NseqKRA0l4jg4tqmP3cuuC6JH4O9YdpQDTgtxZ0l7c5oFMCjU3ibAuLTwk7VRf6yTiIe0EphT11BSZGLyMR_Thpjquf7dow0vV1_Ah7zJ25tc"/>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-32 px-margin max-w-screen-md mx-auto">
+        <section class="mb-xl">
+            <div class="relative group cursor-pointer overflow-hidden rounded-xl bg-white border border-slate-200 shadow-sm transition-all hover:shadow-md">
+                <div class="aspect-[16/9] overflow-hidden">
+                    <img alt="Clinical science" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArFSpWmqMvD8m9hbQh8MHMusVU598hBK4KAcZi7T0uAOqLmOIoxuGTRN0Fk2vBq196VFZycx014PZQV-5yi0NBxrjT71c0kw7uRCywkkyznkSMHqilQ-rhM96RdVzx0-bz1MPT9VqFyzloyVA_uoMcfKkb1yIgJ6qYQq427qQ_-rQcyfgg8-0zLBbIsYRYVs2-bx97R4Ghh5RkIuZnMn5_Xsztmwc7gmtzZeRFmlj88_0HH9C3tV2cuAPVEs2SWLMT39AS3sLAtTmP"/>
+                </div>
+                <div class="p-md">
+                    <div class="flex items-center gap-sm mb-base">
+                        <span class="bg-secondary-container text-on-secondary-container px-2 py-0.5 rounded-full text-[10px] font-bold tracking-widest uppercase font-manrope">PROMISE</span>
+                        <span class="text-caption text-outline font-manrope">CLINICAL • 5 MIN READ</span>
+                    </div>
+                    <h2 class="font-h3 text-h3 text-primary mb-sm leading-tight">臨床的ブレイクスルー：エラゾームとエクソソームの科学</h2>
+                    <p class="text-body-md text-on-surface-variant line-clamp-2 mb-md font-caption">
+                        最新の研究により、次世代の成分であるエラゾームが皮膚の深層バリアを再生し、従来のケアを超える修復効果をもたらすことが判明しました。
+                    </p>
+                    <div class="flex items-center text-secondary font-label-md tracking-wider">
+                        READ MORE 
+                        <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-xl">
+            <div class="bg-white border border-outline-variant rounded-xl p-md flex flex-col justify-between hover:border-secondary transition-colors cursor-pointer">
+                <div>
+                    <span class="text-[10px] font-bold tracking-widest text-outline uppercase mb-sm block font-manrope">Economy</span>
+                    <h3 class="font-h3 text-[20px] leading-snug mb-base">世界経済の回復：2025年の経済動向</h3>
+                    <p class="text-caption text-on-surface-variant font-caption">新興市場의 成長とデジタル通貨の統合が、今後数年間のグローバル経済を再定義します。</p>
+                </div>
+                <div class="mt-md flex items-center justify-between">
+                    <span class="text-[11px] text-outline">Jan 24, 2025</span>
+                    <span class="material-symbols-outlined text-secondary">public</span>
+                </div>
+            </div>
+
+            <div class="bg-white border border-outline-variant rounded-xl overflow-hidden hover:border-secondary transition-colors cursor-pointer">
+                <div class="h-32 bg-slate-100">
+                    <img alt="Sports Highlight" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsr9C5N2fg-jromnGvc_8YBZOi4qVSsh1IlFAHVVCIA4mJP2eJATBURufU8mX7OaSRVDnxhMZYPx23mHPTd2AFRnKuYKG6fWkvrRszminTydYz2HpGchjPB1kUG6tCM319T6qUUfDXEMpDrOoPN0Dc7ze-LY2-F82sm2mMk4TAPb3rw7mR8MQUsxA3tKu3NzCZXkCqHR2FjR6j-6GOhGEveIKxgP-hsLhbCF7MGlO-IdYJbYwG2is66L0kFibZPdewmjvLlhGPAiF7"/>
+                </div>
+                <div class="p-md">
+                    <span class="text-[10px] font-bold tracking-widest text-outline uppercase mb-sm block font-manrope">Sports</span>
+                    <h3 class="font-h3 text-[20px] leading-snug mb-base">チャンピオンシップ・ハイライト：週末のまとめ</h3>
+                    <p class="text-caption text-on-surface-variant font-caption">歴史的な逆転劇と若手選手の台頭が、今シーズンのドラマを象徴しています。</p>
+                </div>
+            </div>
+
+            <div class="bg-primary text-on-primary rounded-xl p-md md:col-span-2 flex flex-col md:flex-row items-center gap-md">
+                <div class="flex-1">
+                    <h4 class="font-manrope text-[12px] font-bold tracking-[0.3em] uppercase mb-base text-secondary-fixed">Dermatology Alert</h4>
+                    <p class="font-h3 text-[22px] leading-tight mb-xs">冬の乾燥対策：臨床医が推奨する3つの習慣</p>
+                    <p class="text-slate-400 text-caption">皮膚科専門医による最新の保湿メソッドを限定公開中。</p>
+                </div>
+                <button class="bg-white text-primary px-lg py-sm font-label-md tracking-widest rounded-full uppercase hover:scale-105 transition-transform active:scale-95">
+                    VIEW GUIDE
+                </button>
+            </div>
+        </section>
+
+        <section class="space-y-md mb-xl">
+            <h4 class="font-manrope text-[12px] font-extrabold tracking-widest uppercase text-outline mb-md flex items-center gap-base">
+                <span class="w-8 h-[1px] bg-outline-variant"></span> Recent Feed
+            </h4>
+            <div class="flex gap-md border-b border-outline-variant pb-md">
+                <div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                    <img alt="Medical News" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDkppMqmQkZTgCF1CxFUv5J0c0LOQ6FoQiIO4tlZwHmkoJ1XFIZkY74UiAt4RopdFSHm5h7Pbb8apNHoV2SXlyBHsP5E-cXXhftS3bMtBfIUFUziAHPqjioAwmXu8qJA1vkdrkm_K1Q7KGGJGdPDHBsLEldAwSoP53gwfnKHZuWfYup6_6j2CrJwdKL8Sj0dWf1nCE-yNCI7YsXehR_utGsAjNzsydPWFuM8B0nwCGhBl9qjzFeSdoRyTLguEXciTbpYDi_beETlmHI"/>
+                </div>
+                <div class="flex-1">
+                    <h5 class="text-body-md font-bold mb-xs">美容医療の最前線：低侵襲治療の進化</h5>
+                    <p class="text-caption text-on-surface-variant line-clamp-1">ダウンタイムを最小限に抑えた新しいレーザー技術の導入背景...</p>
+                    <span class="text-[11px] text-outline mt-sm block">4 HOURS AGO • BY DR. SATO</span>
+                </div>
+            </div>
+            <div class="flex gap-md border-b border-outline-variant pb-md">
+                <div class="w-20 h-20 flex-shrink-0 rounded-lg overflow-hidden bg-surface-container">
+                    <img alt="Lab Tech" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfwu7pm4WbMe17D63uw7SEe9QY_sYt2CdZAZbB6CXZYxbTvkzwXJaPTSG02m-MpqYd4TtPDOSq1sktYp6grLOZJfRDtW88W5KYyRML3WHASLZw1lw_wpgOynAfgx2pXAku2JUjT63gjFoXMmMFsTLc4KflbZAE3sY9mgMhmnm3lK5b-ngEHUIlGxylwjYvjwZv-2pnOt_yMdkWF6CHtFOVzSWLvabQ4r4icVo_vyjs3dD2oRkW1_nXq_Y_PBg1xAlzzgRxnT5Vr_Qs"/>
+                </div>
+                <div class="flex-1">
+                    <h5 class="text-body-md font-bold mb-xs">バイオテクノロジー：細胞レベルのエイジングケア</h5>
+                    <p class="text-caption text-on-surface-variant line-clamp-1">幹細胞研究がもたらす皮膚再生の新たな可能性についての解説。</p>
+                    <span class="text-[11px] text-outline mt-sm block">12 HOURS AGO • SCIENCE DESK</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 border-t border-[#e5e2e1] dark:border-slate-800 h-20 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_1.html')">Home</span>
+</a>
+<!-- FORUM -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/forum_obj.html')">FORUM</span>
+</a>
+<!-- ROUTINE (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/forum_obj_link.html')">ROUTINE</span>
+</a>
+<!-- <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest">Shop</span>
+</a> -->
+</nav>
+<script src="/static/API/blog_directing.js">
+    function redirecting_pages(path){
+        try{
+            window.location.href = `${path}`;
+        }
+        catch(error){
+            alert(`An error occured :\n ${error}`);
+            console.error(error)
+        }
+    }
+</script>
+</body>
+</html>

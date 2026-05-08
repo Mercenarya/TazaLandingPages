@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="light" lang="de">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>H.DERMA | T.403 Serum Forum</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#00030a",
+                        "secondary": "#7b581c",
+                        "secondary-container": "#ffd088",
+                        "on-secondary-container": "#79571b",
+                        "background": "#fbf9fb",
+                        "on-surface": "#1b1b1e",
+                        "on-surface-variant": "#44474d",
+                        "outline-variant": "#c5c6ce",
+                        "primary-container": "#0a1d37",
+                        "surface-bright": "#fbf9fb",
+                        "surface-container-high": "#e9e7ea"
+                    },
+                    "fontFamily": {
+                        "h1": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "h3": ["Manrope"],
+                        "body-md": ["Noto Serif"]
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .backdrop-blur-md { backdrop-filter: blur(12px); }
+        body { min-height: 100dvh; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md selection:bg-secondary-container">
+
+<header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-[#e5e2e1] h-16 flex justify-between items-center px-6">
+    <button class="hover:opacity-70 transition-opacity text-[#0A1D37]">
+        <span class="material-symbols-outlined">menu</span>
+    </button>
+    <h1 class="text-lg font-bold tracking-[0.3em] text-[#0A1D37] uppercase font-manrope">H.DERMA</h1>
+    <div class="w-6"></div>
+</header>
+
+<main class="pt-24 pb-32 px-6 max-w-2xl mx-auto">
+    <section class="mb-12">
+        <div class="flex items-center gap-3 mb-3">
+            <span class="px-3 py-1 bg-secondary-container text-on-secondary-container text-[10px] font-bold rounded-full uppercase tracking-widest">Forum</span>
+            <span class="text-outline-variant">•</span>
+            <span class="text-[10px] font-bold text-secondary uppercase tracking-widest">Produkt-Einblick</span>
+        </div>
+        <h2 class="text-3xl font-bold text-primary mb-4 font-h2">T.403 Serum Komplex</h2>
+        <p class="text-on-surface-variant mb-8 italic">Klinische Diskussionen über die Wirksamkeit von 20% B3 zur Reduzierung dunkler Flecken und Barriere-Reparatur.</p>
+        
+        <div class="relative group">
+            <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-secondary transition-colors">search</span>
+            <input class="w-full pl-12 pr-4 py-4 bg-white border border-[#e5e2e1] rounded-none focus:ring-0 focus:border-secondary text-xs tracking-wider placeholder:text-slate-300 uppercase transition-all shadow-sm" placeholder="DISKUSSIONEN DURCHSUCHEN" type="text"/>
+        </div>
+    </section>
+
+    <div class="flex flex-col gap-8">
+        <!-- Beitrag 1 -->
+        <article class="bg-white border border-[#e5e2e1] overflow-hidden shadow-sm">
+            <div class="p-6">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-surface-container-high flex items-center justify-center text-secondary border border-outline-variant">
+                            <span class="material-symbols-outlined">verified_user</span>
+                        </div>
+                        <div>
+                            <p class="text-[12px] font-bold text-primary uppercase tracking-tighter">Klinischer Beirat</p>
+                            <p class="text-[11px] text-slate-400">24. OKT 2023</p>
+                        </div>
+                    </div>
+                    <span class="material-symbols-outlined text-secondary">bookmark</span>
+                </div>
+                <h3 class="text-xl font-bold text-primary mb-3 leading-tight font-h3">Quantifizierung der Pigmentfleck-Reduktion in Phase-III-Studien</h3>
+                <p class="text-sm text-on-surface-variant mb-4">Unsere Doppelblindstudie bestätigt eine Reduzierung der Hyperpigmentierung um 34 % nach 8-wöchiger Anwendung von T.403.</p>
+            </div>
+            <div class="grid grid-cols-2 gap-[2px] bg-[#e5e2e1]">
+                <div class="h-48 bg-slate-100 overflow-hidden">
+                    <img alt="Klinische Aufnahmen" class="w-full h-full object-cover" src="/storages/contents_hherma/product2.png"/>
+                </div>
+                <div class="h-48 bg-slate-100 overflow-hidden">
+                    <img alt="Hautstruktur" class="w-full h-full object-cover" src="/storages/contents_hherma/product2.png"/>
+                </div>
+            </div>
+            <div class="px-6 py-4 flex items-center justify-between bg-surface-bright/50 border-t border-[#e5e2e1]">
+                <div class="flex items-center gap-6">
+                    <button class="flex items-center gap-2 text-secondary">
+                        <span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">favorite</span>
+                        <span class="text-[12px] font-bold">842</span>
+                    </button>
+                    <div class="flex items-center gap-2 text-slate-400">
+                        <span class="material-symbols-outlined text-[20px]">visibility</span>
+                        <span class="text-[12px] font-bold">2.4K</span>
+                    </div>
+                </div>
+                <span class="text-[10px] text-slate-400 font-bold uppercase tracking-widest">Verifizierter Bericht</span>
+            </div>
+        </article>
+
+        <!-- Beitrag 2 -->
+        <article class="bg-white border border-[#e5e2e1] p-6 shadow-sm">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-10 h-10 rounded-full bg-primary-container text-white flex items-center justify-center font-bold text-xs">E.L.</div>
+                <div>
+                    <p class="text-[12px] font-bold text-primary uppercase tracking-tighter">Verifizierte Patientenerfahrung</p>
+                    <p class="text-[11px] text-slate-400">VOR 14 TAGEN</p>
+                </div>
+            </div>
+            <h3 class="text-xl font-bold text-primary mb-3 leading-tight font-h3">Barriere-Reparatur: Eine 14-tägige Transformation</h3>
+            <p class="text-sm text-on-surface-variant mb-6 italic">"Nach Jahren des übermäßigen Peelings war meine Barriere zerstört. Der T.403 Komplex ist die einzige Formel, die die Spannkraft wiederhergestellt hat..."</p>
+            <div class="aspect-square bg-slate-100 overflow-hidden mb-6">
+                <img alt="Serum Detail" class="w-full h-full object-cover" src="/storages/contents_hherma/product2.png"/>
+            </div>
+            <div class="flex items-center justify-between pt-4 border-t border-[#e5e2e1]/50">
+                <button class="flex items-center gap-2 text-slate-400 hover:text-secondary transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">favorite</span>
+                    <span class="text-[12px] font-bold">315</span>
+                </button>
+                <button class="text-slate-400 hover:text-primary transition-colors">
+                    <span class="material-symbols-outlined text-[20px]">share</span>
+                </button>
+            </div>
+        </article>
+
+        <!-- Inhaltsstoffe Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div class="bg-primary-container p-6 text-white flex flex-col justify-between">
+                <span class="material-symbols-outlined text-secondary text-[32px]">science</span>
+                <div class="mt-8">
+                    <h4 class="text-lg font-bold mb-1">Niacinamid (B3)</h4>
+                    <p class="text-[10px] opacity-60 font-bold uppercase tracking-widest mb-3">20% Konzentration</p>
+                    <p class="text-[13px] leading-relaxed">Die optimale klinische Dosierung zur Hemmung des Melanosomentransfers.</p>
+                </div>
+            </div>
+            <div class="bg-white border border-[#e5e2e1] p-6 flex flex-col justify-between">
+                <span class="material-symbols-outlined text-secondary text-[32px]">shield_moon</span>
+                <div class="mt-8">
+                    <h4 class="text-lg font-bold text-primary mb-1">Zink PCA</h4>
+                    <p class="text-[10px] text-slate-400 font-bold uppercase tracking-widest mb-3">Sebum-Kontrolle</p>
+                    <p class="text-[13px] text-on-surface-variant leading-relaxed">Reguliert die Ölproduktion und unterstützt den natürlichen Reparaturzyklus.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Call to Action -->
+        <article class="bg-[#f0edec] p-12 text-center">
+            <span class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-3 block">Integration</span>
+            <h3 class="text-2xl font-bold text-primary mb-4">Integrieren Sie T.403 in Ihre Routine</h3>
+            <p class="text-sm text-on-surface-variant mb-8 max-w-xs mx-auto">Erfahren Sie, wie dieser Komplex synergetisch mit Ihrer bestehenden H.Derma-Pflege wirkt.</p>
+            <button class="bg-primary text-white px-12 py-4 text-xs font-bold tracking-[0.15em] uppercase hover:opacity-90 transition-all shadow-md">
+                ROUTINE ANSEHEN
+            </button>
+        </article>
+    </div>
+</main>
+
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 border-t border-[#e5e2e1] dark:border-slate-800 h-20 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_2.html')">Home</span>
+</a>
+<!-- FORUM -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/germain/forum_obj.html')">FORUM</span>
+</a>
+<!-- ROUTINE (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/germain/forum_obj_link.html')">ROUTINE</span>
+</a>
+<!-- <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest">Shop</span>
+</a> -->
+</nav>
+<script>
+    function redirecting_pages(path){
+        try{
+            window.location.href = `${path}`;
+        }
+        catch(error){
+            alert(`Ein Fehler ist aufgetreten:\n ${error}`);
+            console.error(error)
+        }
+    }
+</script>
+</body>
+</html>

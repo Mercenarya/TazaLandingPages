@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Serif:wght@400;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+          tailwind.config = {
+            darkMode: "class",
+            theme: {
+              extend: {
+                "colors": {
+                        "error-container": "#ffdad6",
+                        "on-secondary": "#ffffff",
+                        "outline-variant": "#c5c6ce",
+                        "on-tertiary-container": "#78869c",
+                        "surface-dim": "#dbd9dc",
+                        "secondary": "#7b581c",
+                        "on-tertiary-fixed": "#0e1c2e",
+                        "primary-fixed": "#d6e3ff",
+                        "on-secondary-container": "#79571b",
+                        "background": "#fbf9fb",
+                        "tertiary": "#00030b",
+                        "primary-fixed-dim": "#b6c7e9",
+                        "surface-container": "#efedf0",
+                        "on-secondary-fixed": "#281800",
+                        "on-background": "#1b1b1e",
+                        "tertiary-fixed": "#d5e3fc",
+                        "outline": "#75777e",
+                        "inverse-surface": "#303032",
+                        "tertiary-container": "#101e30",
+                        "secondary-fixed-dim": "#edbf79",
+                        "error": "#ba1a1a",
+                        "surface": "#fbf9fb",
+                        "on-primary-fixed": "#081c36",
+                        "tertiary-fixed-dim": "#b9c7df",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#f2f0f3",
+                        "on-error-container": "#93000a",
+                        "on-primary-container": "#7586a5",
+                        "on-surface": "#1b1b1e",
+                        "on-tertiary-fixed-variant": "#3a485b",
+                        "secondary-fixed": "#ffddae",
+                        "surface-bright": "#fbf9fb",
+                        "inverse-primary": "#b6c7e9",
+                        "primary": "#00030a",
+                        "surface-tint": "#4e5f7c",
+                        "on-primary": "#ffffff",
+                        "surface-variant": "#e4e2e4",
+                        "surface-container-highest": "#e4e2e4",
+                        "surface-container-high": "#e9e7ea",
+                        "primary-container": "#0a1d37",
+                        "on-primary-fixed-variant": "#364763",
+                        "secondary-container": "#ffd088",
+                        "surface-container-low": "#f5f3f5",
+                        "on-surface-variant": "#44474d",
+                        "surface-container-lowest": "#ffffff",
+                        "on-tertiary": "#ffffff",
+                        "on-secondary-fixed-variant": "#604104"
+                },
+                "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                },
+                "spacing": {
+                        "sm": "12px",
+                        "xl": "80px",
+                        "md": "24px",
+                        "margin": "24px",
+                        "base": "8px",
+                        "xs": "4px",
+                        "gutter": "24px",
+                        "lg": "48px"
+                },
+                "fontFamily": {
+                        "h3": ["Manrope"],
+                        "h2": ["Manrope"],
+                        "h1": ["Manrope"],
+                        "label-md": ["Manrope"],
+                        "caption": ["Noto Serif"],
+                        "body-lg": ["Noto Serif"],
+                        "body-md": ["Noto Serif"]
+                },
+                "fontSize": {
+                        "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}],
+                        "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                        "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                        "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                        "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}]
+                }
+              },
+            },
+          }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        /* line-clamp 오류 수정: 표준 속성 추가 */
+        .line-clamp-2 {
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        body {
+          min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md antialiased">
+    <header class="fixed top-0 left-0 w-full flex justify-between items-center px-6 h-16 bg-white/80 backdrop-blur-md z-50 border-b border-slate-200">
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-slate-900 cursor-pointer hover:opacity-70 transition-opacity" data-icon="menu">menu</span>
+            <span class="text-lg font-black tracking-widest text-slate-900 font-manrope uppercase">DERMA CLINIC</span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="material-symbols-outlined text-slate-900" data-icon="search">search</span>
+            <div class="w-8 h-8 rounded-full overflow-hidden border border-slate-200 bg-slate-100">
+                <img alt="Profile" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ2seYQp259eERmRM3SraDefqqQyb4K5Frwe9EX0hTPPtl5J8rUBy_V8_wXWCAP3r7jNEtGAqyXqj3U6fp-rh142fsQqCXSNUEmwVQd6_LklaC8kcyX-3wVg6CCPBzVkOxrqmjYW-l5HLD4WY_72r3QeBPEoUoInm0MxgqgyI3uA4Gay-3uP2Z2JQLnxweSrmQ1ue_jpU4TFIpHg6HQTgHzZeZgn1Jrj9_qYMkYm2ur6a5CoXzXvYSLcyMK2C77B8eeHXz7gru2Jo1"/>
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-24 pb-32 max-w-screen-md mx-auto px-margin">
+        <section class="mb-xl">
+            <div class="relative rounded-xl overflow-hidden group mb-sm">
+                <div class="aspect-[16/9] w-full">
+                    <img alt="Clinical Lab" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD5tesenoQzpXeACN4PqfTMKRwRxzess2M8yiEaLMq6JJa5xW-h3t64vKtkJ3F0Gi4iE9X3aq7UN61LpIJAVEDMzZ1B3nYlYtXjP2sEq95L7mP18A6-rXb0S3Vxedty_MkGgRtKZbpOF4Y1IfeVGhm6puvXbKQinrK4gPnPWsiNQLjicNhqi8YDmL2-afQynAOJkpmUD5LSzrGAEEHPb5TdPu_OQ2qUNa9Y4f8_TEHJx6GeokwxTxhxE9PIdwXYdXYvgFJ5Zz0UhcJZ"/>
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                    <div class="inline-flex bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full text-xs font-bold tracking-widest uppercase mb-3 self-start">PROMISE</div>
+                    <h1 class="font-h1 text-white text-h3 md:text-h2 leading-tight mb-2">임상적 혁신: 엘라좀과 엑소좀의 과학</h1>
+                    <p class="text-white/80 font-body-md line-clamp-2">피부 재생의 새로운 시대를 여는 고농축 엑소좀 기술의 정밀 과학을 탐구합니다.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-gutter mb-xl">
+            <div class="bg-white border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+                <div class="aspect-video">
+                    <img alt="Economy" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiYp_ZG0iHerlG1GpJGXQ90eXLKp7KNBGNiK0A1H-HvzKjIrn6KjYcjKN33_dxFXgW8gbi8qFi-FCY3iQ-u45RGibbuAsfqbhU4BlrHc4kQsxYZ7E3h60fRWtXsT9p1F6NZD3COuNn003PAVGCsm6TdpWok704i6IztY2rehkUDAb1m3sZlFKxE0WqmSdPcZVN7Ye5ZCIzH_QNzFS3AIEghkmXnAXkyJk_4K2NIBknfcGER4z2AYZdB1gl9Xk9PydfwybbT7BOY8WW"/>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary font-label-md text-xs tracking-[0.15em] uppercase">경제 TREND</span>
+                        <span class="text-outline text-xs">2025.01.24</span>
+                    </div>
+                    <h2 class="font-h3 text-primary text-xl mb-3 leading-snug">세계 경제 회복: 2025년 경제 트렌드</h2>
+                    <p class="text-on-surface-variant font-body-md text-sm line-clamp-3 mb-6">글로벌 시장의 변화와 새로운 소비 패턴이 가져올 2025년 거시 경제의 핵심 전망을 분석합니다.</p>
+                    <div class="mt-auto flex items-center text-secondary hover:opacity-70 transition-opacity cursor-pointer">
+                        <span class="font-label-md text-xs">더 보기</span>
+                        <span class="material-symbols-outlined text-sm ml-1" data-icon="arrow_forward">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white border border-outline-variant rounded-xl overflow-hidden flex flex-col">
+                <div class="aspect-video">
+                    <img alt="Sports" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCbfqkFKq7NoN37O5Qb3oGe_x8FWLQYbESlXrIdiXvuRelxZOu1__BrJn39fPHwNQh97aFxOVICuOWr65XD1UwnpOWEDbzVwZFKZVwzL-G3nUic6ApChyJXJ76Sqe4nK8FTz4Meo7nRxWVIQixJmWGIwpNy_xpkpgtoSpAmHINqlqdKxKJtBc4tlz3mnDUInxe_FVzigj69Jw40Q1Mz1Zhljm13gCoRvfCYuoKh4q1J2B6ywpe2oP0lwYkIQOk1c8O4kT8BOIAyv1iw"/>
+                </div>
+                <div class="p-6 flex flex-col flex-grow">
+                    <div class="flex justify-between items-center mb-3">
+                        <span class="text-secondary font-label-md text-xs tracking-[0.15em] uppercase">스포츠 하이라이트</span>
+                        <span class="text-outline text-xs">어제</span>
+                    </div>
+                    <h2 class="font-h3 text-primary text-xl mb-3 leading-snug">챔피언십 하이라이트: 주말 경기 요약</h2>
+                    <p class="text-on-surface-variant font-body-md text-sm line-clamp-3 mb-6">이번 주말 열린 주요 경기들의 역전 드라마와 최고의 순간들을 생생하게 전달합니다.</p>
+                    <div class="mt-auto flex items-center text-secondary hover:opacity-70 transition-opacity cursor-pointer">
+                        <span class="font-label-md text-xs">경기 리포트</span>
+                        <span class="material-symbols-outlined text-sm ml-1" data-icon="arrow_forward">arrow_forward</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-surface-container-lowest border border-outline-variant p-6 rounded-xl">
+            <h3 class="font-h3 text-primary mb-6 flex items-center">
+                <span class="material-symbols-outlined mr-2 text-secondary" data-icon="verified" style="font-variation-settings: 'FILL' 1;">verified</span>
+                전문가 뉴스레터
+            </h3>
+            <div class="space-y-6">
+                <div class="flex gap-4 items-start pb-6 border-b border-outline-variant/30">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-secondary" data-icon="biotech">biotech</span>
+                    </div>
+                    <div>
+                        <h4 class="font-manrope font-bold text-on-surface mb-1">피부 장벽 강화 시스템</h4>
+                        <p class="text-on-surface-variant text-sm">최신 세라마이드 복합체 연구 결과 및 임상 적용 사례 발표.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start pb-6 border-b border-outline-variant/30">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-secondary" data-icon="spa">spa</span>
+                    </div>
+                    <div>
+                        <h4 class="font-manrope font-bold text-on-surface mb-1">식물 유래 성분의 효능</h4>
+                        <p class="text-on-surface-variant text-sm">고순도 병풀 추출물이 피부 진정에 미치는 분자 생물학적 메커니즘.</p>
+                    </div>
+                </div>
+                <div class="flex gap-4 items-start">
+                    <div class="w-12 h-12 bg-secondary/10 rounded-full flex items-center justify-center shrink-0">
+                        <span class="material-symbols-outlined text-secondary" data-icon="monitoring">monitoring</span>
+                    </div>
+                    <div>
+                        <h4 class="font-manrope font-bold text-on-surface mb-1">디지털 더마 트렌드</h4>
+                        <p class="text-on-surface-variant text-sm">AI 기반 피부 분석 시스템의 정확도와 미래 뷰티 테크 시장 전망.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 border-t border-[#e5e2e1] dark:border-slate-800 h-20 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_1.html')">Home</span>
+</a>
+<!-- FORUM -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/forum_obj.html')">FORUM</span>
+</a>
+<!-- ROUTINE (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/forum_obj_link.html')">ROUTINE</span>
+</a>
+<!-- <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest">Shop</span>
+</a> -->
+</nav>
+<script src="/static/API/blog_directing.js">
+    function redirecting_pages(path){
+        try{
+            window.location.href = `${path}`;
+        }
+        catch(error){
+            alert(`An error occured :\n ${error}`);
+            console.error(error)
+        }
+    }
+</script>
+</body>
+</html>

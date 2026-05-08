@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html class="light" lang="ja">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    <title>H.DERMA | プロフェッショナル・スキンケアカタログ</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Manrope:wght@800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00030a",
+                        "primary-container": "#0a1d37",
+                        "secondary": "#775a19",
+                        "surface": "#fcf9f8",
+                        "outline": "#75777e",
+                        "outline-variant": "#c5c6ce",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { background-color: #fcf9f8; color: #1c1b1b; -webkit-font-smoothing: antialiased; font-family: 'Noto Sans JP', sans-serif; }
+        #sidebar-menu { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-transition { transition: all 0.4s ease-in-out; }
+        #display-image { transition: opacity 0.5s ease, transform 0.5s ease; }
+        .menu-thumb { width: 40px; height: 40px; object-fit: contain; mix-blend-mode: multiply; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Sidebar Menu -->
+    <aside id="sidebar-menu" class="fixed top-0 left-0 h-full w-[320px] bg-white z-[70] shadow-2xl transform -translate-x-full border-r border-outline-variant/30 flex flex-col">
+        <div class="p-6 border-b flex justify-between items-center bg-white sticky top-0 z-10">
+            <div>
+                <h2 class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1">H.DERMA 公式</h2>
+                <h3 class="text-sm font-extrabold text-primary-container uppercase tracking-tight">製品カタログ</h3>
+            </div>
+            <button id="close-sidebar" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-outline">close</span>
+            </button>
+        </div>
+        <nav id="product-menu-list" class="flex-1 p-4 space-y-1 overflow-y-auto"></nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-outline-variant/30 top-0 sticky z-50">
+        <div class="grid grid-cols-3 items-center w-full px-6 h-16">
+            <div class="flex justify-start">
+                <button id="open-sidebar" class="hover:bg-slate-50 p-2 -ml-2 rounded-full transition-all">
+                    <span class="material-symbols-outlined text-primary-container text-[26px]">notes</span>
+                </button>
+            </div>
+            <div class="flex justify-center text-center">
+                <h1 style="font-family: 'Manrope';" class="text-[16px] font-extrabold tracking-[0.25em] text-primary-container uppercase">H.DERMA</h1>
+            </div>
+          
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="product-transition">
+        <!-- Hero Section -->
+        <section id="hero-bg" class="flex flex-col bg-[#97A5BC] transition-colors duration-700">
+            <div class="px-6 pt-16 pb-10 text-center text-white">
+                <h2 class="text-3xl font-extrabold mb-4 leading-tight tracking-tight uppercase">理想の肌へ導く</h2>
+                <p id="display-category" class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mb-2">美容液</p>
+                <p class="text-sm opacity-90 max-w-xs mx-auto mb-8 leading-relaxed">
+                    臨床的に証明された皮膚科学に基づいたソリューションで、健やかで輝く肌へ。
+                </p>
+                <button class="bg-white text-primary-container px-10 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl">
+                    今すぐ購入
+                </button>
+            </div>
+            <div class="w-full flex items-center justify-center h-[320px] overflow-hidden p-8">
+                <img id="display-image" alt="Product" class="h-full w-auto object-contain drop-shadow-2xl" src=""/>
+            </div>
+        </section>
+
+        <!-- Product Details -->
+        <section class="px-6 py-10 bg-white border-b border-outline-variant/30 text-center">
+            <div class="max-w-lg mx-auto">
+                <div class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">プロフェッショナル品質</div>
+                <h1 id="display-name" class="text-xl font-bold text-primary-container mb-3 uppercase leading-tight"></h1>
+                <p id="display-desc" class="text-sm text-outline italic mb-6"></p>
+                <div id="display-price" class="text-3xl font-bold text-primary-container tracking-tight" style="font-family: 'Manrope';"></div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="px-6 py-12 bg-surface">
+            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                <div class="col-span-2 bg-white border border-outline-variant/50 p-8 rounded-3xl text-center shadow-sm">
+                    <span class="material-symbols-outlined text-secondary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+                    <h3 class="font-bold text-lg mb-2">深層保湿ケア</h3>
+                    <p class="text-xs text-outline leading-relaxed">肌の奥深く（角質層）まで潤いを届ける高保湿フォーミュラ。</p>
+                </div>
+                <div class="bg-white border border-outline-variant/50 p-6 rounded-3xl text-center">
+                    <span class="material-symbols-outlined text-secondary text-3xl mb-2">grid_view</span>
+                    <h4 class="text-[10px] font-bold uppercase mb-1">毛穴ケア</h4>
+                    <p class="text-[10px] text-outline">きめ細やかな肌へ。</p>
+                </div>
+                <div class="bg-white border border-outline-variant/50 p-6 rounded-3xl text-center">
+                    <span class="material-symbols-outlined text-secondary text-3xl mb-2">verified</span>
+                    <h4 class="text-[10px] font-bold uppercase mb-1">検証済み</h4>
+                    <p class="text-[10px] text-outline">安全性と効果。</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md border-t border-[#e5e2e1] h-20 pb-safe flex justify-around items-center">
+    <a class="flex flex-col items-center justify-center text-slate-400 hover:text-[#775519] transition-transform" href="#">
+    <span class="material-symbols-outlined mb-1">home</span>
+    <span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_3.html')">Home</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+    <span class="material-symbols-outlined">forum</span>
+    <span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/japanese/forum_obj.html')">フォーラム</span>
+    </a>
+    <a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+    <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">science</span>
+    <span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/japanese/forum_obj_link.html')">ルーティン</span>
+    </a>
+    </nav>
+
+    <script>
+        function redirecting_pages(path){
+            try{
+                window.location.href = `${path}`;
+            }
+            catch(error){
+                alert(`エラーが発生しました:\n ${error}`);
+                console.error(error)
+            }
+        }    
+        const IMAGE_PATH_PREFIX = "/data/bg_images/";
+
+        const imageMap = {
+            "T.403 Serum Complex 20% B3": "product2.png",
+            "Premium B5 Recovery Serum": "Serum-H.Derma-Premium-5-B5.png",
+            "HA Complex Hydration Serum": "Serum-duong-da-H.Derma-HA-Complex-8.png",
+            "Bio-Microneedling Spicule": "Mockup-vi-kim-biospicule-1536x1536.png",
+            "Salmon DNA Whitening": "cay-trang-dna-s920-1.png",
+            "BHA Biomecare Toner": "Hop-va-chai-toner-BHA-Biomecare.png",
+            "Peptide Restorative Cream": "nen-trang-peptide-1536x1536.png",
+            "B3 Whitening Body Cream": "kem-duong-trang-da-body-b3-S601-3.png"
+        };
+
+        const demoData = [
+            { ProductName: "T.403 Serum Complex 20% B3", Category: "美容液", Description: "シミを軽減し、肌を明るくします", price: 1860 },
+            { ProductName: "Premium B5 Recovery Serum", Category: "美容液", Description: "肌バリアの修復と鎮静", price: 4712 },
+            { ProductName: "HA Complex Hydration Serum", Category: "美容液", Description: "深層保湿とハリ感", price: 5881 },
+            { ProductName: "Bio-Microneedling Spicule", Category: "特殊ケア", Description: "先端肌再生テクノロジー", price: 14703 },
+            { ProductName: "Salmon DNA Whitening", Category: "特殊ケア", Description: "集中美白ケア", price: 11761 },
+            { ProductName: "BHA Biomecare Toner", Category: "化粧水", Description: "毛穴ケアと皮脂コントロール", price: 5881 },
+            { ProductName: "Peptide Restorative Cream", Category: "クリーム", Description: "エイジングケアと肌の引き締め", price: 14703 },
+            { ProductName: "B3 Whitening Body Cream", Category: "ボディケア", Description: "全身のトーンアップ", price: 4704 }
+        ];
+
+        const sidebar = document.getElementById('sidebar-menu');
+        const overlay = document.getElementById('sidebar-overlay');
+        const mainContent = document.getElementById('main-content');
+        const displayImg = document.getElementById('display-image');
+
+        function formatPrice(val) {
+            // Nhật Bản không sử dụng phần thập phân cho Yên: ¥1,860
+            return new Intl.NumberFormat('ja-JP', { style: 'currency', currency: 'JPY' }).format(val);
+        }
+
+        function toggleSidebar(isOpen) {
+            if (isOpen) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        document.getElementById('open-sidebar').onclick = () => toggleSidebar(true);
+        document.getElementById('close-sidebar').onclick = () => toggleSidebar(false);
+        overlay.onclick = () => toggleSidebar(false);
+
+        function updateProduct(item) {
+            mainContent.style.opacity = '0';
+            displayImg.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                document.getElementById('display-name').innerText = item.ProductName;
+                document.getElementById('display-category').innerText = item.Category;
+                document.getElementById('display-desc').innerText = `「${item.Description}」`;
+                document.getElementById('display-price').innerText = formatPrice(item.price);
+                
+                const fileName = imageMap[item.ProductName] || "product2.png";
+                displayImg.src = IMAGE_PATH_PREFIX + fileName;
+
+                const bgColors = {
+                    '美容液': '#97A5BC', 
+                    '特殊ケア': '#BCA3A3',
+                    '化粧水': '#A5BCA3', 
+                    'クリーム': '#B4A3BC', 
+                    'ボディケア': '#BCB7A3'
+                };
+                document.getElementById('hero-bg').style.backgroundColor = bgColors[item.Category] || '#97A5BC';
+
+                mainContent.style.opacity = '1';
+                displayImg.style.transform = 'scale(1)';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 400);
+        }
+
+        function renderMenu(data) {
+            const list = document.getElementById('product-menu-list');
+            list.innerHTML = '';
+            data.forEach(item => {
+                const fileName = imageMap[item.ProductName] || "product2.png";
+                const btn = document.createElement('div');
+                btn.className = "flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 cursor-pointer transition-all group border border-transparent hover:border-outline-variant/30 mb-1";
+                btn.innerHTML = `
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center overflow-hidden border border-outline-variant/20 group-hover:bg-white transition-all">
+                        <img src="${IMAGE_PATH_PREFIX + fileName}" class="menu-thumb transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <span class="text-[10px] font-extrabold uppercase leading-tight text-primary-container group-hover:text-secondary transition-colors">${item.ProductName}</span>
+                        <span class="text-[8px] text-outline font-bold uppercase tracking-widest mt-1 opacity-70">${item.Category}</span>
+                    </div>
+                    <span class="material-symbols-outlined text-slate-300 text-sm group-hover:text-secondary">chevron_right</span>`;
+                btn.onclick = () => { updateProduct(item); toggleSidebar(false); };
+                list.appendChild(btn);
+            });
+        }
+
+        function search_product(data){
+            try{
+                const searchbar = document.getElementById('').value;
+            }catch(error){
+                console.error('An error occured: ${error}');
+            }
+            
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu(demoData);
+            updateProduct(demoData[0]);
+        });
+    </script>
+</body>
+</html>

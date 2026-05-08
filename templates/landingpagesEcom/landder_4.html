@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html class="light" lang="ko">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
+    <title>H.DERMA | 전문 스킨케어 카탈로그</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&family=Manrope:wght@800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#00030a",
+                        "primary-container": "#0a1d37",
+                        "secondary": "#775a19",
+                        "surface": "#fcf9f8",
+                        "outline": "#75777e",
+                        "outline-variant": "#c5c6ce",
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
+        body { background-color: #fcf9f8; color: #1c1b1b; -webkit-font-smoothing: antialiased; font-family: 'Noto Sans KR', sans-serif; }
+        #sidebar-menu { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
+        .product-transition { transition: all 0.4s ease-in-out; }
+        #display-image { transition: opacity 0.5s ease, transform 0.5s ease; }
+        .menu-thumb { width: 40px; height: 40px; object-fit: contain; mix-blend-mode: multiply; }
+    </style>
+</head>
+<body class="pb-24">
+
+    <!-- Sidebar Overlay -->
+    <div id="sidebar-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
+
+    <!-- Sidebar Menu -->
+    <aside id="sidebar-menu" class="fixed top-0 left-0 h-full w-[320px] bg-white z-[70] shadow-2xl transform -translate-x-full border-r border-outline-variant/30 flex flex-col">
+        <div class="p-6 border-b flex justify-between items-center bg-white sticky top-0 z-10">
+            <div>
+                <h2 class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1">H.DERMA 공식</h2>
+                <h3 class="text-sm font-extrabold text-primary-container uppercase tracking-tight">제품 카탈로그</h3>
+            </div>
+            <button id="close-sidebar" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
+                <span class="material-symbols-outlined text-outline">close</span>
+            </button>
+        </div>
+        <nav id="product-menu-list" class="flex-1 p-4 space-y-1 overflow-y-auto"></nav>
+    </aside>
+
+    <!-- Header -->
+    <header class="bg-white/80 backdrop-blur-md border-b border-outline-variant/30 top-0 sticky z-50">
+        <div class="grid grid-cols-3 items-center w-full px-6 h-16">
+            <div class="flex justify-start">
+                <button id="open-sidebar" class="hover:bg-slate-50 p-2 -ml-2 rounded-full transition-all">
+                    <span class="material-symbols-outlined text-primary-container text-[26px]">notes</span>
+                </button>
+            </div>
+            <div class="flex justify-center text-center">
+                <h1 style="font-family: 'Manrope';" class="text-[16px] font-extrabold tracking-[0.25em] text-primary-container uppercase">H.DERMA</h1>
+            </div>
+            
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main-content" class="product-transition">
+        <!-- Hero Section -->
+        <section id="hero-bg" class="flex flex-col bg-[#97A5BC] transition-colors duration-700">
+            <div class="px-6 pt-16 pb-10 text-center text-white">
+                <h2 class="text-3xl font-extrabold mb-4 leading-tight tracking-tight uppercase">피부를 컨트롤하다</h2>
+                <p id="display-category" class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mb-2">세럼</p>
+                <p class="text-sm opacity-90 max-w-xs mx-auto mb-8 leading-relaxed">
+                    임상적으로 증명된 더마 솔루션으로 건강하고 빛나는 피부를 경험하세요.
+                </p>
+                <button class="bg-white text-primary-container px-10 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl">
+                    지금 구매하기
+                </button>
+            </div>
+            <div class="w-full flex items-center justify-center h-[320px] overflow-hidden p-8">
+                <img id="display-image" alt="Product" class="h-full w-auto object-contain drop-shadow-2xl" src=""/>
+            </div>
+        </section>
+
+        <!-- Product Details -->
+        <section class="px-6 py-10 bg-white border-b border-outline-variant/30 text-center">
+            <div class="max-w-lg mx-auto">
+                <div class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">전문가용 퀄리티</div>
+                <h1 id="display-name" class="text-xl font-bold text-primary-container mb-3 uppercase leading-tight"></h1>
+                <p id="display-desc" class="text-sm text-outline italic mb-6"></p>
+                <div id="display-price" class="text-3xl font-bold text-primary-container tracking-tight" style="font-family: 'Manrope';"></div>
+            </div>
+        </section>
+
+        <!-- Features Grid -->
+        <section class="px-6 py-12 bg-surface">
+            <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
+                <div class="col-span-2 bg-white border border-outline-variant/50 p-8 rounded-3xl text-center shadow-sm">
+                    <span class="material-symbols-outlined text-secondary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">water_drop</span>
+                    <h3 class="font-bold text-lg mb-2">집중 수분 케어</h3>
+                    <p class="text-xs text-outline leading-relaxed">피부 깊숙이 수분을 전달하여 속건조를 해결하는 고보습 포뮬러.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/50 p-6 rounded-3xl text-center">
+                    <span class="material-symbols-outlined text-secondary text-3xl mb-2">grid_view</span>
+                    <h4 class="text-[10px] font-bold uppercase mb-1">모공 관리</h4>
+                    <p class="text-[10px] text-outline">매끈한 피부 결.</p>
+                </div>
+                <div class="bg-white border border-outline-variant/50 p-6 rounded-3xl text-center">
+                    <span class="material-symbols-outlined text-secondary text-3xl mb-2">verified</span>
+                    <h4 class="text-[10px] font-bold uppercase mb-1">테스트 완료</h4>
+                    <p class="text-[10px] text-outline">안전성과 효능.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md border-t border-[#e5e2e1] h-20 pb-safe flex justify-around items-center">
+        <a class="flex flex-col items-center justify-center text-slate-400 hover:text-secondary transition-transform" href="#">
+            <span class="material-symbols-outlined mb-1">home</span>
+            <span class="text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_4.html')">Home</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+            <span class="material-symbols-outlined">forum</span>
+            <span class="text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/korean/forum_obj.html')">커뮤니티</span>
+        </a>
+        <a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+            <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">science</span>
+            <span class="text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/korean/forum_obj_link.html')">루틴</span>
+        </a>
+    </nav>
+
+    <script>
+        function redirecting_pages(path){
+            try{
+                window.location.href = `${path}`;
+            }
+            catch(error){
+                alert(`오류가 발생했습니다:\n ${error}`);
+                console.error(error)
+            }
+        }    
+        const IMAGE_PATH_PREFIX = "/data/bg_images/";
+
+        const imageMap = {
+            "T.403 Serum Complex 20% B3": "product2.png",
+            "Premium B5 Recovery Serum": "Serum-H.Derma-Premium-5-B5.png",
+            "HA Complex Hydration Serum": "Serum-duong-da-H.Derma-HA-Complex-8.png",
+            "Bio-Microneedling Spicule": "Mockup-vi-kim-biospicule-1536x1536.png",
+            "Salmon DNA Whitening": "cay-trang-dna-s920-1.png",
+            "BHA Biomecare Toner": "Hop-va-chai-toner-BHA-Biomecare.png",
+            "Peptide Restorative Cream": "nen-trang-peptide-1536x1536.png",
+            "B3 Whitening Body Cream": "kem-duong-trang-da-body-b3-S601-3.png"
+        };
+
+        const demoData = [
+            { ProductName: "T.403 Serum Complex 20% B3", Category: "세럼", Description: "다크 스팟 감소 및 피부 광채 부여", price: 16440 },
+            { ProductName: "Premium B5 Recovery Serum", Category: "세럼", Description: "피부 장벽 복구 및 진정", price: 41648 },
+            { ProductName: "HA Complex Hydration Serum", Category: "세럼", Description: "깊은 보습 및 탄력 강화", price: 51978 },
+            { ProductName: "Bio-Microneedling Spicule", Category: "스페셜 케어", Description: "첨단 피부 재생 기술", price: 129958 },
+            { ProductName: "Salmon DNA Whitening", Category: "스페셜 케어", Description: "집중 미백 관리", price: 103956 },
+            { ProductName: "BHA Biomecare Toner", Category: "토너", Description: "모공 관리 및 유분 조절", price: 51978 },
+            { ProductName: "Peptide Restorative Cream", Category: "크림", Description: "안티에이징 및 피부 탄력 개선", price: 129958 },
+            { ProductName: "B3 Whitening Body Cream", Category: "바디 케어", Description: "전신 피부 톤 개선", price: 41580 }
+        ];
+
+        const sidebar = document.getElementById('sidebar-menu');
+        const overlay = document.getElementById('sidebar-overlay');
+        const mainContent = document.getElementById('main-content');
+        const displayImg = document.getElementById('display-image');
+
+        function formatPrice(val) {
+            // Định dạng tiền tệ Won (Hàn Quốc): ₩16,440
+            return new Intl.NumberFormat('ko-KR', { style: 'currency', currency: 'KRW' }).format(val);
+        }
+
+        function toggleSidebar(isOpen) {
+            if (isOpen) {
+                sidebar.classList.remove('-translate-x-full');
+                overlay.classList.remove('hidden');
+                setTimeout(() => overlay.classList.add('opacity-100'), 10);
+            } else {
+                sidebar.classList.add('-translate-x-full');
+                overlay.classList.remove('opacity-100');
+                setTimeout(() => overlay.classList.add('hidden'), 300);
+            }
+        }
+
+        document.getElementById('open-sidebar').onclick = () => toggleSidebar(true);
+        document.getElementById('close-sidebar').onclick = () => toggleSidebar(false);
+        overlay.onclick = () => toggleSidebar(false);
+
+        function updateProduct(item) {
+            mainContent.style.opacity = '0';
+            displayImg.style.transform = 'scale(0.9)';
+            
+            setTimeout(() => {
+                document.getElementById('display-name').innerText = item.ProductName;
+                document.getElementById('display-category').innerText = item.Category;
+                document.getElementById('display-desc').innerText = `"${item.Description}"`;
+                document.getElementById('display-price').innerText = formatPrice(item.price);
+                
+                const fileName = imageMap[item.ProductName] || "product2.png";
+                displayImg.src = IMAGE_PATH_PREFIX + fileName;
+
+                const bgColors = {
+                    '세럼': '#97A5BC', 
+                    '스페셜 케어': '#BCA3A3',
+                    '토너': '#A5BCA3', 
+                    '크림': '#B4A3BC', 
+                    '바디 케어': '#BCB7A3'
+                };
+                document.getElementById('hero-bg').style.backgroundColor = bgColors[item.Category] || '#97A5BC';
+
+                mainContent.style.opacity = '1';
+                displayImg.style.transform = 'scale(1)';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 400);
+        }
+
+        function renderMenu(data) {
+            const list = document.getElementById('product-menu-list');
+            list.innerHTML = '';
+            data.forEach(item => {
+                const fileName = imageMap[item.ProductName] || "product2.png";
+                const btn = document.createElement('div');
+                btn.className = "flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 cursor-pointer transition-all group border border-transparent hover:border-outline-variant/30 mb-1";
+                btn.innerHTML = `
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center overflow-hidden border border-outline-variant/20 group-hover:bg-white transition-all">
+                        <img src="${IMAGE_PATH_PREFIX + fileName}" class="menu-thumb transform group-hover:scale-110 transition-transform duration-300">
+                    </div>
+                    <div class="flex flex-col flex-1">
+                        <span class="text-[10px] font-extrabold uppercase leading-tight text-primary-container group-hover:text-secondary transition-colors">${item.ProductName}</span>
+                        <span class="text-[8px] text-outline font-bold uppercase tracking-widest mt-1 opacity-70">${item.Category}</span>
+                    </div>
+                    <span class="material-symbols-outlined text-slate-300 text-sm group-hover:text-secondary">chevron_right</span>`;
+                btn.onclick = () => { updateProduct(item); toggleSidebar(false); };
+                list.appendChild(btn);
+            });
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            renderMenu(demoData);
+            updateProduct(demoData[0]);
+        });
+    </script>
+</body>
+</html>

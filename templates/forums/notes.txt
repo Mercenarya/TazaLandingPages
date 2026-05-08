@@ -1,0 +1,8 @@
+Forums nên chuyển sang dạng nhiều ngôn ngữ , bao gồm
+- tiếng anh 
+- tiếng nhật
+- tiếng hàn
+- tiếng đức
+Mỗi templates đều dùng chung một hàm định hướng (routing) để điều hướng đến các trang khác nhau, ví dụ như trang chủ, trang sản phẩm, trang liên hệ, v.v. Hàm này sẽ được gọi khi người dùng nhấp vào các liên kết trong menu điều hướng hoặc các nút trên trang.
+Hàm định hướng sẽ nhận vào một tham số là đường dẫn của trang mà người dùng muốn truy cập. Dựa vào tham số này, hàm sẽ xác định trang đích và thực hiện chuyển hướng người dùng đến trang đó. Ví dụ, nếu người dùng nhấp vào liên kết "Home", hàm sẽ nhận tham số "/templates/landingpagesEcom/landder_2.html" và chuyển hướng người dùng đến trang chủ của landing page.
+Điều này giúp cho việc quản lý và bảo trì các trang trở nên dễ dàng hơn, vì tất cả các trang đều sử dụng cùng một hàm định hướng để điều hướng người dùng. Nếu có sự thay đổi về cấu trúc hoặc đường dẫn của các trang, chỉ cần cập nhật hàm định hướng mà không cần phải sửa đổi từng trang một cách riêng lẻ.
