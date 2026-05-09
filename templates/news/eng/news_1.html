@@ -282,19 +282,25 @@
 </section>
 </div>
 </main>
-<!-- Bottom Navigation -->
-<nav class="bg-white/80 dark:bg-slate-950/80 backdrop-blur-md text-slate-900 dark:text-slate-50 fixed bottom-0 left-0 w-full flex justify-around items-center px-4 py-3 pb-safe border-t border-slate-200 dark:border-slate-800 z-50 shadow-[0_-4px_12px_rgba(0,0,0,0.05)] rounded-t-xl">
-<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-slate-600 dark:hover:text-slate-300 transition-transform active:translate-y-[-2px]">
-<span class="material-symbols-outlined">home</span>
-<span class="font-manrope text-[10px] font-bold tracking-wider uppercase">Home</span>
-</div>
-<div class="flex flex-col items-center justify-center text-slate-900 dark:text-slate-50 bg-slate-100 dark:bg-slate-800 rounded-xl px-4 py-1 transition-transform active:translate-y-[-2px]">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">chat_bubble</span>
-<span class="font-manrope text-[10px] font-bold tracking-wider uppercase">Forum</span>
-</div>
-<div class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 px-4 py-1 hover:text-slate-600 dark:hover:text-slate-300 transition-transform active:translate-y-[-2px]">
-<span class="material-symbols-outlined">auto_awesome</span>
-<span class="font-manrope text-[10px] font-bold tracking-wider uppercase">Routine</span>
-</div>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 border-t border-[#e5e2e1] dark:border-slate-800 h-20 pb-safe flex justify-around items-center">
+<a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('/templates/landingpagesEcom/landder_1.html')">Home</span>
+</a>
+<!-- FORUM -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('/templates/forums/english/forum_obj.html')">FORUM</span>
+</a>
+<!-- ROUTINE (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages/templates/forums/english/forum_obj_link.html')">ROUTINE</span>
+</a>
+<!-- <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
+<span class="material-symbols-outlined mb-1" data-icon="shopping_bag">shopping_bag</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest">Shop</span>
+</a> -->
 </nav>
 </body></html>
