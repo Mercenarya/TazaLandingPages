@@ -1,4 +1,5 @@
 selenium
 numpy
 pandas
-
+chromedriver-py
+webdriver-manager
