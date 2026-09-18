@@ -3,9 +3,9 @@
 <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width, initial-scale=1.0, viewport-fit=cover" name="viewport"/>
-    <title>H.DERMA | Professional Skincare Catalog</title>
+    <title>H.DERMA | Global Professional Skincare</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script id="tailwind-config">
         tailwind.config = {
@@ -18,29 +18,30 @@
                         "surface": "#fcf9f8",
                         "outline": "#75777e",
                         "outline-variant": "#c5c6ce",
-                    }
+                    },
+                    fontFamily: { sans: ['Manrope', 'Noto Sans JP', 'Noto Sans KR', 'sans-serif'] }
                 }
             }
         }
     </script>
     <style>
         .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24; }
-        body { background-color: #fcf9f8; color: #1c1b1b; -webkit-font-smoothing: antialiased; font-family: 'Manrope', sans-serif; }
+        body { background-color: #fcf9f8; color: #1c1b1b; -webkit-font-smoothing: antialiased; }
         #sidebar-menu { transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .product-transition { transition: all 0.4s ease-in-out; }
-        #display-image { transition: opacity 0.5s ease, transform 0.5s ease; }
+        .product-transition { transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out; }
         .menu-thumb { width: 40px; height: 40px; object-fit: contain; mix-blend-mode: multiply; }
+        select { background-image: none !important; }
     </style>
 </head>
 <body class="pb-24">
 
+    <!-- Sidebar Menu -->
     <div id="sidebar-overlay" class="fixed inset-0 bg-black/40 backdrop-blur-sm z-[60] hidden opacity-0 transition-opacity duration-300"></div>
-
-    <aside id="sidebar-menu" class="fixed top-0 left-0 h-full w-[320px] bg-white z-[70] shadow-2xl transform -translate-x-full border-r border-outline-variant/30 flex flex-col">
+    <aside id="sidebar-menu" class="fixed top-0 left-0 h-full w-[300px] bg-white z-[70] shadow-2xl transform -translate-x-full border-r border-outline-variant/30 flex flex-col">
         <div class="p-6 border-b flex justify-between items-center bg-white sticky top-0 z-10">
             <div>
                 <h2 class="text-[10px] font-bold text-secondary uppercase tracking-[0.2em] mb-1">H.DERMA Official</h2>
-                <h3 class="text-sm font-extrabold text-primary-container uppercase tracking-tight">Product Catalog</h3>
+                <h3 id="ui-sidebar-title" class="text-sm font-extrabold text-primary-container uppercase tracking-tight">Catalog</h3>
             </div>
             <button id="close-sidebar" class="p-2 hover:bg-slate-100 rounded-full transition-colors">
                 <span class="material-symbols-outlined text-outline">close</span>
@@ -49,6 +50,7 @@
         <nav id="product-menu-list" class="flex-1 p-4 space-y-1 overflow-y-auto"></nav>
     </aside>
 
+    <!-- Header -->
     <header class="bg-white/80 backdrop-blur-md border-b border-outline-variant/30 top-0 sticky z-50">
         <div class="grid grid-cols-3 items-center w-full px-6 h-16">
             <div class="flex justify-start">
@@ -59,214 +61,215 @@
             <div class="flex justify-center text-center">
                 <h1 class="text-[16px] font-extrabold tracking-[0.25em] text-primary-container uppercase">H.DERMA</h1>
             </div>
+            <div class="flex justify-end">
+                <select id="lang-selector" class="text-[11px] font-extrabold border border-outline-variant/50 rounded-lg px-2 py-1 bg-white focus:ring-0 cursor-pointer uppercase">
+                    <option value="en">🇺🇸 EN ($)</option>
+                    <option value="jp">🇯🇵 JP (¥)</option>
+                    <option value="kr">🇰🇷 KR (₩)</option>
+                    <option value="de">🇩🇪 DE (€)</option>
+                </select>
+            </div>
         </div>
     </header>
 
+    <!-- Main Content -->
     <main id="main-content" class="product-transition">
         <section id="hero-bg" class="flex flex-col bg-[#97A5BC] transition-colors duration-700">
             <div class="px-6 pt-16 pb-10 text-center text-white">
-                <h2 class="text-4xl font-extrabold mb-4 leading-tight tracking-tight uppercase">CONTROL YOUR SKIN</h2>
-                <p id="display-category" class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mb-2">Serums</p>
-                <p class="text-sm opacity-90 max-w-xs mx-auto mb-8 leading-relaxed">
-                    Clinically proven dermatological solutions for healthy, radiant skin.
-                </p>
-                <button class="bg-white text-primary-container px-10 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl">
-                    SHOP COLLECTION
-                </button>
+                <h2 id="ui-hero-title" class="text-4xl font-extrabold mb-4 leading-tight tracking-tight uppercase">CONTROL YOUR SKIN</h2>
+                <p id="display-category" class="text-[10px] font-bold tracking-[0.2em] uppercase opacity-80 mb-2">Category</p>
+                <p id="ui-hero-desc" class="text-sm opacity-90 max-w-xs mx-auto mb-8 leading-relaxed">Solution for skin.</p>
+                <button id="ui-shop-btn" class="bg-white text-primary-container px-10 py-3.5 rounded-lg font-bold text-xs uppercase tracking-widest shadow-xl">SHOP COLLECTION</button>
             </div>
-            <div class="w-full flex items-center justify-center h-[320px] overflow-hidden p-8">
-                <img id="display-image" alt="Product" class="h-full w-auto object-contain drop-shadow-2xl" src="/data/images/product2.png"/>
+            <div class="w-full flex items-center justify-center h-[320px] p-8">
+                <img id="display-image" alt="Product" class="h-full w-auto object-contain drop-shadow-2xl transition-transform duration-500" src=""/>
             </div>
         </section>
 
         <section class="px-6 py-10 bg-white border-b border-outline-variant/30 text-center">
             <div class="max-w-lg mx-auto">
-                <div class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Professional Grade</div>
-                <h1 id="display-name" class="text-2xl font-bold text-primary-container mb-3 uppercase leading-tight">
-                    T.403 Serum Complex 20% B3
-                </h1>
-                <p id="display-desc" class="text-sm text-outline italic mb-4">"Reduces dark spots & brightens skin"</p>
-                <!-- Thêm ID display-price vào đây -->
-                <div id="display-price" class="text-3xl font-bold text-primary-container tracking-tight">$12.00</div>
+                <div id="ui-grade-badge" class="inline-block px-3 py-1 bg-secondary/10 text-secondary text-[10px] font-bold uppercase tracking-widest rounded-full mb-4">Professional Grade</div>
+                <h1 id="display-name" class="text-2xl font-bold text-primary-container mb-3 uppercase leading-tight">Product Name</h1>
+                <p id="display-desc" class="text-sm text-outline italic mb-4">"Description"</p>
+                <div id="display-price" class="text-4xl font-extrabold text-primary-container tracking-tight">$0.00</div>
             </div>
         </section>
 
-        <!-- Phần tính năng giữ nguyên -->
+        <!-- Features -->
         <section class="px-6 py-12 bg-surface">
             <div class="grid grid-cols-2 gap-4 max-w-md mx-auto">
                 <div class="col-span-2 bg-white border border-outline-variant/50 p-8 rounded-3xl text-center shadow-sm">
                     <span class="material-symbols-outlined text-secondary text-5xl mb-4" style="font-variation-settings: 'FILL' 1;">water_drop</span>
-                    <h3 class="font-manrope font-bold text-xl mb-2">Deep Hydration</h3>
-                    <p class="text-xs text-outline font-noto leading-relaxed">Intensive moisture locking formula for the deepest skin layers.</p>
+                    <h3 id="ui-feat-1-title" class="font-bold text-xl mb-2">Deep Hydration</h3>
+                    <p id="ui-feat-1-desc" class="text-xs text-outline leading-relaxed">Intensive moisture locking formula.</p>
                 </div>
                 <div class="bg-white border border-outline-variant/50 p-6 rounded-3xl text-center">
                     <span class="material-symbols-outlined text-secondary text-3xl mb-2">grid_view</span>
-                    <h4 class="text-[10px] font-bold uppercase mb-1">Pore Care</h4>
-                    <p class="text-[10px] text-outline">Refined texture.</p>
+                    <h4 id="ui-feat-2-title" class="text-[10px] font-bold uppercase mb-1">Pore Care</h4>
+                    <p id="ui-feat-2-desc" class="text-[10px] text-outline">Refined texture.</p>
                 </div>
                 <div class="bg-white border border-outline-variant/50 p-6 rounded-3xl text-center">
                     <span class="material-symbols-outlined text-secondary text-3xl mb-2">verified</span>
-                    <h4 class="text-[10px] font-bold uppercase mb-1">Safe & Lab</h4>
-                    <p class="text-[10px] text-outline">Certified results.</p>
+                    <h4 id="ui-feat-3-title" class="text-[10px] font-bold uppercase mb-1">Safe & Lab</h4>
+                    <p id="ui-feat-3-desc" class="text-[10px] text-outline">Certified results.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- BottomNavBar -->
-    <nav class="fixed bottom-0 w-full z-50 bg-white/80 backdrop-blur-md dark:bg-slate-900/80 border-t border-[#e5e2e1] dark:border-slate-800 h-20 pb-safe flex justify-around items-center">
-    <a class="flex flex-col items-center justify-center text-slate-400 dark:text-slate-500 hover:text-[#775519] transition-transform" href="#">
-    <span class="material-symbols-outlined mb-1" data-icon="home">home</span>
-    <span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('index.html')">Home</span>
-    </a>
-    <!-- FORUM -->
-    <a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
-    <span class="material-symbols-outlined" data-icon="forum">forum</span>
-    <span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('forum.html')">FORUM</span>
-    </a>
-    <!-- ROUTINE (ACTIVE) -->
-    <a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
-    <span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
-    <span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('blog_link.html')">ROUTINE</span>
-    </a>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.2/papaparse.min.js"></script>
     <script>
+        let currentLang = 'en'; // Mặc định là Tiếng Anh
+        let activeProductIndex = 0;
 
-        function redirecting_pages(path){
-            try{
-                window.location.href = `${path}`;
+        const config = {
+            en: {
+                currency: "$", rate: 1, locale: 'en-US',
+                ui: {
+                    sidebarTitle: "Product Catalog", heroTitle: "CONTROL YOUR SKIN",
+                    heroDesc: "Clinically proven dermatological solutions for healthy, radiant skin.",
+                    shopBtn: "SHOP COLLECTION", gradeBadge: "Professional Grade",
+                    feat1Title: "Deep Hydration", feat1Desc: "Intensive moisture locking formula for the deepest skin layers.",
+                    feat2Title: "Pore Care", feat2Desc: "Refined texture.",
+                    feat3Title: "Safe & Lab", feat3Desc: "Certified results."
+                },
+                categories: { 'Serums': 'Serums', 'Special Treatment': 'Special Treatment', 'Toners': 'Toners', 'Creams': 'Creams', 'Body Care': 'Body Care' }
+            },
+            jp: {
+                currency: "¥", rate: 155, locale: 'ja-JP',
+                ui: {
+                    sidebarTitle: "製品カタログ", heroTitle: "肌をコントロールする",
+                    heroDesc: "健康で輝く肌のための、臨床的に証明された皮膚科ソリューション。",
+                    shopBtn: "コレクションを見る", gradeBadge: "プロフェッショナルグレード",
+                    feat1Title: "深層保湿", feat1Desc: "肌の深層部まで水分を閉じ込める集中処方。",
+                    feat2Title: "毛穴ケア", feat2Desc: "きめ細やかな肌へ。",
+                    feat3Title: "安全・研究済み", feat3Desc: "認定された効果。"
+                },
+                categories: { 'Serums': 'セラム', 'Special Treatment': '特別ケア', 'Toners': 'トナー', 'Creams': 'クリーム', 'Body Care': 'ボディケア' }
+            },
+            kr: {
+                currency: "₩", rate: 1370, locale: 'ko-KR',
+                ui: {
+                    sidebarTitle: "제품 카탈로그", heroTitle: "당신의 피부를 관리하세요",
+                    heroDesc: "건강하고 빛나는 피부를 위해 임상적으로 입증된 피부과 솔루션.",
+                    shopBtn: "컬렉션 쇼핑하기", gradeBadge: "전문가용 등급",
+                    feat1Title: "심층 수분", feat1Desc: "피부 깊숙이 수분을 잠그는 집중 포뮬러.",
+                    feat2Title: "모공 관리", feat2Desc: "정교한 피부 결.",
+                    feat3Title: "안전 및 인증", feat3Desc: "검증된 결과."
+                },
+                categories: { 'Serums': '세럼', 'Special Treatment': '스페셜 케어', 'Toners': '토너', 'Creams': '크림', 'Body Care': '바디 케어' }
+            },
+            de: {
+                currency: "€", rate: 0.92, locale: 'de-DE',
+                ui: {
+                    sidebarTitle: "Produktkatalog", heroTitle: "KONTROLLIEREN SIE IHRE HAUT",
+                    heroDesc: "Klinisch erprobte dermatologische Lösungen für gesunde, strahlende Haut.",
+                    shopBtn: "KOLLEKTION SHOPPEN", gradeBadge: "Professionelle Qualität",
+                    feat1Title: "Tiefenhydratation", feat1Desc: "Intensive Feuchtigkeitsspeicherformel für die Haut.",
+                    feat2Title: "Porenpflege", feat2Desc: "Verfeinerte Textur.",
+                    feat3Title: "Sicher & Geprüft", feat3Desc: "Zertifizierte Ergebnisse."
+                },
+                categories: { 'Serums': 'Seren', 'Special Treatment': 'Spezialbehandlung', 'Toners': 'Toner', 'Creams': 'Cremes', 'Body Care': 'Körperpflege' }
             }
-            catch(error){
-                alert(`An error occured :\n ${error}`);
-                console.error(error)
-            }
-        }
-        const IMAGE_PATH_PREFIX = "/data/bg_images/";
-
-        const imageMap = {
-            "T.403 Serum Complex 20% B3": "product2.png",
-            "Premium B5 Recovery Serum": "Serum-H.Derma-Premium-5-B5.png",
-            "HA Complex Hydration Serum": "Serum-duong-da-H.Derma-HA-Complex-8.png",
-            "Bio-Microneedling Spicule": "Mockup-vi-kim-biospicule-1536x1536.png",
-            "Salmon DNA Whitening": "cay-trang-dna-s920-1.png",
-            "BHA Biomecare Toner": "Hop-va-chai-toner-BHA-Biomecare.png",
-            "Peptide Restorative Cream": "nen-trang-peptide-1536x1536.png",
-            "B3 Whitening Body Cream": "kem-duong-trang-da-body-b3-S601-3.png"
         };
 
-        const sidebar = document.getElementById('sidebar-menu');
-        const overlay = document.getElementById('sidebar-overlay');
-        const mainContent = document.getElementById('main-content');
-        const displayImg = document.getElementById('display-image');
+        const products = [
+            { ProductName: "T.403 Serum Complex 20% B3", Category: "Serums", basePrice: 12, img: "product2.png", desc: { en: "Reduces dark spots & brightens skin", jp: "シミを軽減し、肌を明るくします", kr: "잡티 감소 및 피부 미백", de: "Reduziert dunkle Flecken & hellt auf" } },
+            { ProductName: "Premium B5 Recovery Serum", Category: "Serums", basePrice: 30.4, img: "Serum-H.Derma-Premium-5-B5.png", desc: { en: "Intensive skin barrier recovery", jp: "肌バリアの修復と鎮静", kr: "피부 장벽 회복 및 진정", de: "Barriere-Reparatur & Beruhigung" } },
+            { ProductName: "HA Complex Hydration Serum", Category: "Serums", basePrice: 37.94, img: "Serum-duong-da-H.Derma-HA-Complex-8.png", desc: { en: "Deep hydration and plumping", jp: "深層保湿とハリ感", kr: "깊은 수분 공급 및 탄력", de: "Hydratation & Aufpolsterung" } },
+            { ProductName: "Bio-Microneedling Spicule", Category: "Special Treatment", basePrice: 94.86, img: "Mockup-vi-kim-biospicule-1536x1536.png", desc: { en: "Advanced skin renewal technology", jp: "先端肌再生テクノロジー", kr: "첨단 피부 재생 기술", de: "Hauterneuerungstechnologie" } },
+            { ProductName: "Salmon DNA Whitening", Category: "Special Treatment", basePrice: 75.88, img: "cay-trang-dna-s920-1.webp", desc: { en: "Targeted whitening and DNA repair", jp: "集中美白ケア", kr: "집중 피부 미백 관리", de: "Intensive Hautaufhellung" } },
+            { ProductName: "BHA Biomecare Toner", Category: "Toners", basePrice: 37.94, img: "Hop-va-chai-toner-BHA-Biomecare.png", desc: { en: "Pore refining and oil control", jp: "毛穴ケアと皮脂コントロール", kr: "모공 관리 및 유분 조절", de: "Porenverfeinerung & Ölkontrolle" } },
+            { ProductName: "Peptide Restorative Cream", Category: "Creams", basePrice: 94.86, img: "nen-trang-peptide-1536x1536.png", desc: { en: "Anti-aging and skin firming", jp: "エイジングケアと肌の引き締め", kr: "안티에이징 및 피부 탄력", de: "Anti-Aging & Hautstraffung" } },
+            { ProductName: "B3 Whitening Body Cream", Category: "Body Care", basePrice: 30.35, img: "kem-duong-trang-da-body-b3-S601-3.webp", desc: { en: "Full body brightening solution", jp: "全身のトーンアップ", kr: "전신 피부 톤 개선", de: "Verbesserung des Hauttons" } }
+        ];
 
-        function toggleSidebar(isOpen) {
-            if (isOpen) {
-                sidebar.classList.remove('-translate-x-full');
-                overlay.classList.remove('hidden');
-                setTimeout(() => overlay.classList.add('opacity-100'), 10);
-            } else {
-                sidebar.classList.add('-translate-x-full');
-                overlay.classList.remove('opacity-100');
-                setTimeout(() => overlay.classList.add('hidden'), 300);
-            }
+        function formatPrice(basePrice) {
+            const c = config[currentLang];
+            const converted = basePrice * c.rate;
+            const options = (currentLang === 'de' || currentLang === 'en') ? { minimumFractionDigits: 2 } : { maximumFractionDigits: 0 };
+            return c.currency + converted.toLocaleString(c.locale, options);
         }
 
-        document.getElementById('open-sidebar').onclick = () => toggleSidebar(true);
-        document.getElementById('close-sidebar').onclick = () => toggleSidebar(false);
-        overlay.onclick = () => toggleSidebar(false);
+        function refreshUI() {
+            const c = config[currentLang];
+            const product = products[activeProductIndex];
 
-        function updateProduct(item) {
-            mainContent.style.opacity = '0';
-            displayImg.style.transform = 'scale(0.9)';
-            
+            // Update UI Texts
+            document.getElementById('ui-sidebar-title').innerText = c.ui.sidebarTitle;
+            document.getElementById('ui-hero-title').innerText = c.ui.heroTitle;
+            document.getElementById('ui-hero-desc').innerText = c.ui.heroDesc;
+            document.getElementById('ui-shop-btn').innerText = c.ui.shopBtn;
+            document.getElementById('ui-grade-badge').innerText = c.ui.gradeBadge;
+            document.getElementById('ui-feat-1-title').innerText = c.ui.feat1Title;
+            document.getElementById('ui-feat-1-desc').innerText = c.ui.feat1Desc;
+            document.getElementById('ui-feat-2-title').innerText = c.ui.feat2Title;
+            document.getElementById('ui-feat-2-desc').innerText = c.ui.feat2Desc;
+            document.getElementById('ui-feat-3-title').innerText = c.ui.feat3Title;
+            document.getElementById('ui-feat-3-desc').innerText = c.ui.feat3Desc;
+
+            // Transition
+            const main = document.getElementById('main-content');
+            main.style.opacity = '0';
+            main.style.transform = 'translateY(10px)';
+
             setTimeout(() => {
-                document.getElementById('display-name').innerText = item.ProductName;
-                document.getElementById('display-category').innerText = item.Category;
-                document.getElementById('display-desc').innerText = `"${item.Description}"`;
-                
-                // Cập nhật giá sản phẩm từ dữ liệu
-                document.getElementById('display-price').innerText = `$${item.price}`;
-                
-                const fileName = imageMap[item.ProductName] || "Serum-H.Derma-Premium-5-B5.png";
-                displayImg.src = IMAGE_PATH_PREFIX + fileName;
+                document.getElementById('display-name').innerText = product.ProductName;
+                document.getElementById('display-category').innerText = c.categories[product.Category];
+                document.getElementById('display-desc').innerText = `"${product.desc[currentLang]}"`;
+                document.getElementById('display-price').innerText = formatPrice(product.basePrice);
+                document.getElementById('display-image').src = "/data/images/" + product.img;
 
-                const bgColors = {
-                    'Serums': '#97A5BC',
-                    'Special Treatment': '#BCA3A3',
-                    'Toners': '#A5BCA3',
-                    'Creams': '#B4A3BC',
-                    'Body Care': '#BCB7A3'
-                };
-                document.getElementById('hero-bg').style.backgroundColor = bgColors[item.Category] || '#97A5BC';
+                const bgColors = { 'Serums': '#97A5BC', 'Special Treatment': '#BCA3A3', 'Toners': '#A5BCA3', 'Creams': '#B4A3BC', 'Body Care': '#BCB7A3' };
+                document.getElementById('hero-bg').style.backgroundColor = bgColors[product.Category];
 
-                mainContent.style.opacity = '1';
-                displayImg.style.transform = 'scale(1)';
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 400);
+                main.style.opacity = '1';
+                main.style.transform = 'translateY(0)';
+            }, 300);
+
+            renderSidebar();
         }
 
-        window.addEventListener('DOMContentLoaded', () => {
-            // Cập nhật mảng demoData với giá tương ứng
-            const demoData = [
-                {ProductName: "T.403 Serum Complex 20% B3", Category: "Serums", Description: "Reduces dark spots & brightens skin", price: "12"},
-                {ProductName: "Premium B5 Recovery Serum", Category: "Serums", Description: "Skin barrier repair & soothing", price: "30.4"},
-                {ProductName: "HA Complex Hydration Serum", Category: "Serums", Description: "Deep hydration & plumping", price: "37.94"},
-                {ProductName: "Bio-Microneedling Spicule", Category: "Special Treatment", Description: "Advanced skin renewal technology", price: "94.86"},
-                {ProductName: "Salmon DNA Whitening", Category: "Special Treatment", Description: "Intensive skin brightening", price: "75.88"},
-                {ProductName: "BHA Biomecare Toner", Category: "Toners", Description: "Pore refining & oil control", price: "37.94"},
-                {ProductName: "Peptide Restorative Cream", Category: "Creams", Description: "Anti-aging & skin firming", price: "94.86"},
-                {ProductName: "B3 Whitening Body Cream", Category: "Body Care", Description: "Full body tone improvement", price: "30.35"}
-            ];
-            renderMenu(demoData);
-        });
-
-        async function search_product(){
-            try{
-                const search_bar = document.getElementById('').value;
-            }catch(error){
-                console.error(`An error occured:\n ${error}`);
-            }
-        }
-
-        function renderMenu(data) {
+        function renderSidebar() {
             const list = document.getElementById('product-menu-list');
             list.innerHTML = '';
-            
-            data.forEach(item => {
-                const fileName = imageMap[item.ProductName] || "Serum-H.Derma-Premium-5-B5.png";
-                const imgSrc = IMAGE_PATH_PREFIX + fileName;
-
+            products.forEach((item, index) => {
                 const btn = document.createElement('div');
-                btn.className = "flex items-center gap-4 px-4 py-3 rounded-2xl hover:bg-slate-50 cursor-pointer transition-all group border border-transparent hover:border-outline-variant/30 mb-1";
-                
+                btn.className = `flex items-center gap-4 px-4 py-3 rounded-2xl cursor-pointer transition-all mb-1 ${activeProductIndex === index ? 'bg-slate-100 border-secondary/30 border' : 'hover:bg-slate-50 border-transparent border'}`;
                 btn.innerHTML = `
-                    <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center overflow-hidden border border-outline-variant/20 group-hover:bg-white transition-all">
-                        <img src="${imgSrc}" alt="${item.ProductName}" class="menu-thumb transform group-hover:scale-110 transition-transform duration-300">
+                    <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center overflow-hidden border border-outline-variant/20">
+                        <img src="/data/images/${item.img}" class="menu-thumb">
                     </div>
                     <div class="flex flex-col flex-1">
-                        <span class="text-[10px] font-extrabold uppercase leading-tight text-primary-container group-hover:text-secondary transition-colors">
-                            ${item.ProductName}
-                        </span>
-                        <span class="text-[8px] text-outline font-bold uppercase tracking-widest mt-1 opacity-70">
-                            ${item.Category}
-                        </span>
+                        <span class="text-[10px] font-extrabold uppercase leading-tight">${item.ProductName}</span>
+                        <span class="text-[8px] text-outline font-bold uppercase mt-1">${config[currentLang].categories[item.Category]}</span>
                     </div>
-                    <span class="material-symbols-outlined text-slate-300 text-sm group-hover:text-secondary transition-colors">
-                        chevron_right
-                    </span>
                 `;
-
-                btn.onclick = () => {
-                    updateProduct(item);
+                btn.onclick = () => { 
+                    activeProductIndex = index;
+                    refreshUI();
                     toggleSidebar(false);
                 };
                 list.appendChild(btn);
             });
         }
 
+        const sidebar = document.getElementById('sidebar-menu');
+        const overlay = document.getElementById('sidebar-overlay');
+        function toggleSidebar(isOpen) {
+            sidebar.classList.toggle('-translate-x-full', !isOpen);
+            overlay.classList.toggle('hidden', !isOpen);
+            setTimeout(() => overlay.classList.toggle('opacity-100', isOpen), 10);
+        }
+        document.getElementById('open-sidebar').onclick = () => toggleSidebar(true);
+        document.getElementById('close-sidebar').onclick = () => toggleSidebar(false);
+        overlay.onclick = () => toggleSidebar(false);
 
-       
+        document.getElementById('lang-selector').addEventListener('change', (e) => {
+            currentLang = e.target.value;
+            refreshUI();
+        });
+
+        window.addEventListener('DOMContentLoaded', refreshUI);
     </script>
 </body>
 </html>
