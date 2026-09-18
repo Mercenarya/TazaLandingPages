@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Noto+Serif:wght@400;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "secondary-container": "#ffd088",
+                    "surface-container-high": "#e9e7ea",
+                    "background": "#fbf9fb",
+                    "outline": "#75777e",
+                    "outline-variant": "#c5c6ce",
+                    "error": "#ba1a1a",
+                    "surface-tint": "#4e5f7c",
+                    "on-error": "#ffffff",
+                    "inverse-surface": "#303032",
+                    "tertiary-fixed": "#d5e3fc",
+                    "on-tertiary-container": "#78869c",
+                    "on-secondary-fixed": "#281800",
+                    "tertiary-fixed-dim": "#b9c7df",
+                    "primary-fixed-dim": "#b6c7e9",
+                    "surface-bright": "#fbf9fb",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#0a1d37",
+                    "primary": "#00030a",
+                    "on-error-container": "#93000a",
+                    "on-secondary-container": "#79571b",
+                    "on-surface-variant": "#44474d",
+                    "secondary-fixed": "#ffddae",
+                    "on-background": "#1b1b1e",
+                    "surface-container-highest": "#e4e2e4",
+                    "surface-variant": "#e4e2e4",
+                    "error-container": "#ffdad6",
+                    "on-tertiary-fixed-variant": "#3a485b",
+                    "on-surface": "#1b1b1e",
+                    "surface-container": "#efedf0",
+                    "inverse-on-surface": "#f2f0f3",
+                    "secondary-fixed-dim": "#edbf79",
+                    "on-secondary-fixed-variant": "#604104",
+                    "surface-container-low": "#f5f3f5",
+                    "surface": "#fbf9fb",
+                    "primary-fixed": "#d6e3ff",
+                    "on-tertiary-fixed": "#0e1c2e",
+                    "on-tertiary": "#ffffff",
+                    "on-secondary": "#ffffff",
+                    "tertiary-container": "#101e30",
+                    "surface-container-lowest": "#ffffff",
+                    "surface-dim": "#dbd9dc",
+                    "on-primary-fixed": "#081c36",
+                    "tertiary": "#00030b",
+                    "secondary": "#7b581c",
+                    "on-primary-fixed-variant": "#364763",
+                    "inverse-primary": "#b6c7e9",
+                    "on-primary-container": "#7586a5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.125rem",
+                    "lg": "0.25rem",
+                    "xl": "0.5rem",
+                    "full": "0.75rem"
+            },
+            "spacing": {
+                    "margin": "24px",
+                    "gutter": "24px",
+                    "xl": "80px",
+                    "sm": "12px",
+                    "lg": "48px",
+                    "md": "24px",
+                    "base": "8px",
+                    "xs": "4px"
+            },
+            "fontFamily": {
+                    "h1": ["Manrope"],
+                    "caption": ["Noto Serif"],
+                    "h2": ["Manrope"],
+                    "body-lg": ["Noto Serif"],
+                    "label-md": ["Manrope"],
+                    "body-md": ["Noto Serif"],
+                    "h3": ["Manrope"]
+            },
+            "fontSize": {
+                    "h1": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption": ["13px", {"lineHeight": "1.4", "fontWeight": "400"}],
+                    "h2": ["36px", {"lineHeight": "1.3", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1.2", "letterSpacing": "0.05em", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "h3": ["24px", {"lineHeight": "1.4", "fontWeight": "600"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .pb-safe {
+            padding-bottom: env(safe-area-inset-bottom);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-background font-body-md selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- TopAppBar Shell -->
+<nav class="fixed top-0 w-full z-50 border-b border-gray-200 bg-white/80 backdrop-blur-md flex justify-between items-center px-6 h-16">
+<span class="material-symbols-outlined text-slate-900 cursor-pointer transition-all active:scale-95 duration-200" data-icon="menu">menu</span>
+<h1 class="font-manrope tracking-[0.2em] uppercase text-sm font-bold text-slate-900">H.DERMA</h1>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant">
+<img alt="User profile" class="w-full h-full object-cover" data-alt="professional portrait of a young woman with clean healthy skin in a clinical setting with soft natural light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDft1ZohMtRghNOFPjdPqzXi_l6A0iAp-S_HPE5LHe8mUBvFjGIq66cKz_suSKfSu-_n7tnpwSgLDn4qCLK0bWcmkfxYhneELlnTn1czq_VrVx386ySwNZG_Q4Q8n2T5wPt55mh9C56vfGvPiKjkdA-g58-b-vVjUh_1qiWNBibaR1iNC171RDFrPAQuZyegwEZ2Y8B_L2kS7oglM2NrcRrP3rNtFMqxNAtkoZa3z2FMnS5T6Z0-kKXFB9c1jT_-iBmFeFyS9w6Gxw-"/>
+</div>
+</nav>
+<main class="pt-24 pb-32 px-margin max-w-screen-xl mx-auto">
+<!-- Header Section -->
+<header class="mb-lg">
+<span class="font-label-md text-label-md text-secondary uppercase tracking-widest block mb-xs">Professional Guides</span>
+<h2 class="font-h2 text-h2 text-primary leading-tight">Your Prescribed Routine</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-sm max-w-lg">Clinically-backed protocols designed for recovery, maintenance, and long-term skin health.</p>
+</header>
+<!-- Featured Guides Grid (Bento Style) -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- 1. Post-Peel Skincare Guide -->
+<section class="group relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl p-0 transition-all hover:border-secondary">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img alt="Clinical recovery" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close-up of a person gently peeling away a clinical facial mask treatment" src="/storages/contents_hherma/skin1.jpg"/>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-base mb-sm">
+<span class="bg-primary-container text-on-primary-fixed text-[10px] font-bold px-2 py-0.5 rounded tracking-tighter uppercase">RECOVERY</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">12 MIN READ</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-sm">Post-Peel Skincare Guide</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Essential protocols for chemical peel recovery. Focusing on barrier repair, intense hydration, and professional-grade soothing agents.</p>
+<div class="flex items-center justify-between pt-sm border-t border-surface-container">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="verified_user">verified_user</span>
+<span class="font-label-md text-[12px] uppercase">Clinical Protocol</span>
+</div>
+<button onclick="redirecting_pages('/templates/forums/english/forum_blog_1.html')" class="font-label-md text-primary flex items-center gap-xs group-hover:text-secondary transition-colors">
+                            START GUIDE <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- 2. Enhancing Beauty with Vitamin E -->
+<section class="group relative overflow-hidden bg-surface-container-lowest border border-outline-variant rounded-xl p-0 transition-all hover:border-secondary">
+<div class="aspect-[16/9] w-full overflow-hidden">
+<img alt="Antioxidant benefits" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Close up of serum or cream being applied to healthy glowing skin" src="/storages/contents_hherma/skin2.jpg"/>
+</div>
+<div class="p-md">
+<div class="flex items-center gap-base mb-sm">
+<span class="bg-secondary-container text-on-secondary-container text-[10px] font-bold px-2 py-0.5 rounded tracking-tighter uppercase">NUTRIENTS</span>
+<span class="font-label-md text-[12px] text-on-surface-variant">8 MIN READ</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-sm">Enhancing Beauty with Vitamin E</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">Discover the antioxidant power of Vitamin E. Learn how it repairs oxidative damage and strengthens the natural lipid barrier.</p>
+<div class="flex items-center justify-between pt-sm border-t border-surface-container">
+<div class="flex items-center gap-xs">
+<span class="material-symbols-outlined text-secondary text-sm" data-icon="science">science</span>
+<span class="font-label-md text-[12px] uppercase">Formula Science</span>
+</div>
+<button onclick="redirecting_pages('/templates/forums/english/forum_blog_2.html')" class="font-label-md text-primary flex items-center gap-xs group-hover:text-secondary transition-colors">
+                            VIEW DETAILS <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+</div>
+<!-- Secondary List / Timeline Section -->
+</main>
+<!-- BottomNavBar Shell -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-white/80 backdrop-blur-md border-t border-gray-200">
+<!-- HOME -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-manrope text-[10px] font-bold uppercase tracking-widest" onclick="redirecting_pages('index.html')">Home</span>
+</a>
+<!-- FORUM -->
+<a class="flex flex-col items-center justify-center text-slate-400 p-1 hover:bg-slate-100 transition-colors active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="forum">forum</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('forum.html')">FORUM</span>
+</a>
+<!-- ROUTINE (ACTIVE) -->
+<a class="flex flex-col items-center justify-center text-yellow-700 bg-slate-50 rounded-lg p-1 transition-all active:scale-90 duration-150" href="#">
+<span class="material-symbols-outlined" data-icon="science" data-weight="fill">science</span>
+<span class="font-manrope text-[10px] font-bold tracking-wider mt-1" onclick="redirecting_pages('blog_link.html')">ROUTINE</span>
+</a>
+
+</nav>
+<script src="/static/API/blog_directing.js">
+  function redirecting_pages(path){
+    try{
+        window.location.href = `${path}`;
+    }
+    catch(error){
+        alert(`An error occured :\n ${error}`);
+        console.error(error)
+    }
+}
+</script>
+</body></html>
+
+
